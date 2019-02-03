@@ -1,0 +1,38 @@
+<ion-app>
+
+    <ion-menu contentId="menu" side="start">
+
+        <ion-header>
+            <ion-toolbar>
+                <ion-title>Menu</ion-title>
+            </ion-toolbar>
+        </ion-header>
+
+
+        <ion-content>
+
+            <a style="display:block;" menuClose="">
+                <img src="https://s3.amazonaws.com/ionic-io-static/ehzjuJ5QQmOEDse3jWVV_LOGOWEB1.png" style="display:block;width:100%;height:auto;margin-left:auto;margin-right:auto;" />
+            </a>
+
+            <ion-list id="ondaMedia-list1">
+                <ion-item>
+                    <ion-icon name="people" item-left></ion-icon>
+                    NOSOTROS
+                </ion-item>
+                <ion-item>
+                    <ion-icon name="mail" item-left></ion-icon>
+                    CONTACTO
+                </ion-item>
+                <ion-item>
+                    <ion-icon name="information-circle" item-left></ion-icon>
+                    CENTRO PRIVACIDAD
+                </ion-item>
+            </ion-list>
+        </ion-content>
+
+    </ion-menu>
+
+    <ion-router-outlet id="menu" main></ion-router-outlet>
+
+</ion-app>
