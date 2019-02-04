@@ -1,0 +1,32 @@
+<ion-app>
+    <ion-menu contentId="menu" side="start">
+
+        <ion-header>
+            <ion-toolbar>
+                <ion-title>Menu</ion-title>
+            </ion-toolbar>
+        </ion-header>
+
+        <ion-content>
+
+            <a style="display:block;" menuClose="">
+                <img src="https://s3.amazonaws.com/ionic-io-static/ehzjuJ5QQmOEDse3jWVV_LOGOWEB1.png" style="display:block;width:100%;height:auto;margin-left:auto;margin-right:auto;" />
+            </a>
+
+            <ion-list id="ondaMedia-list1" *ngFor ="let p of pages"> 
+                <ion-item  [routerLink]="p.url" routerDirection="root"> 
+                     <div style="background-color:blue ;padding-top:4%">
+                        <span style="color:blue">X</span>
+                    </div> 
+                    <ion-icon name="{{p.icon}}" item-left style="margin-right:1%;margin-left:1%"></ion-icon>
+                        {{p.title}}
+                    </ion-item>       
+            </ion-list>
+        </ion-content>
+    </ion-menu>
+
+    <ion-router-outlet id="menu" main>
+
+    </ion-router-outlet> 
+
+</ion-app>

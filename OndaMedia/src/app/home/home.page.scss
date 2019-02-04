@@ -1,0 +1,9 @@
+#moveTxt {
+
+    -webkit-animation: moving 5s infinite;
+    animation: moving 5s infinite;
+}
+@keyframes moving {
+    from {transform: translateX(0px);}
+    to {transform: translateX(-200px);}
+}
