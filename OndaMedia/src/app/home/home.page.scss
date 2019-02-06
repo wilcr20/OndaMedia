@@ -1,10 +1,17 @@
 #moveTxt {
-
     -webkit-animation: moving 5s infinite;
     animation: moving 5s infinite;
 }
+
 @keyframes moving {
-    from {transform: translateX(0px);}
-    to {transform: translateX(-200px);}
+    from {
+        transform: translateX(0px);
+    }
+    to {
+        transform: translateX(-200px);
+    }
 }
 
+.backgroundCard {
+    --background: #fff url('https://www.ondamedia.es/wp-content/uploads/2019/01/ONRADIO-9-680x409.png') no-repeat center center / cover;
+}

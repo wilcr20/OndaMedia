@@ -9,6 +9,7 @@ import {Router, RouterEvent} from '@angular/router'
 })
 export class MenuPage implements OnInit {
 
+  /*
   pages =[
     {
       title: "INICIO",
@@ -55,6 +56,35 @@ export class MenuPage implements OnInit {
       icon:'key'
     }
   ];
+  */
+
+ pages =[
+  {
+    title: "En directo",
+    url:"/menu/home",
+    icon:"play"
+  },
+  {
+    title: "La lista",
+    url:"/menu/we-us",
+    icon:'list'
+  },
+  {
+    title: "Programas y podcats",
+    url:"/menu/news",
+    icon:'microphone'
+  },
+  {
+    title: "Actualidad",
+    url:"/menu/events",
+    icon:'paper'
+  },
+  {
+    title: "Configuración",
+    url:"/menu/radio-channels",
+    icon:'settings'
+  }
+];
 
   selectedPath = ''; // Verifica el path seleccionado
 
