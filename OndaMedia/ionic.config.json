@@ -1,5 +1,7 @@
 {
   "name": "OndaMedia",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }

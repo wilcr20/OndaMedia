@@ -1,7 +1,6 @@
 <ion-header>
 
-    <ion-toolbar>
-
+    <ion-toolbar color="dark">
 
         <ion-buttons slot="start">
             <ion-menu-button autoHide="true"></ion-menu-button>
@@ -11,30 +10,101 @@
             <img text-center src="https://www.ondamedia.es/wp-content/uploads/2019/01/LOGOWEB1.png" width="50%" height="1%">
         </div>
 
-
     </ion-toolbar>
 
 </ion-header>
 
 <ion-content>
 
-    <ion-card class="backgroundCard">
+    <div class="backgroundImg">
 
         <div class="spacer" style="width:100%;height:80px;"></div>
 
-        <ion-button padding shape="round" color="light">
+        <ion-button padding shape="round" color="dark">
             <ion-icon slot="start" name="play"></ion-icon>
             EN DIRECTO
         </ion-button>
 
-        <div class="spacer" style="width:100%;"></div>
+        <div class="spacer" style="width:100%;height:130px;"></div>
 
-        <h4 padding style="color:white;"> de 11 h a 16 h </h4>
+    </div>
 
-        <div class="spacer" style="width:100%;height:30px;"></div>
+    <div class="spacer" style="width:100%;height:30px;"></div>
 
+
+    <ion-card class="welcome-card">
+
+        <img src="https://www.ondamedia.es/wp-content/uploads/2019/01/harry-potter-caliz-reuters-kovG-U70360695886L3H-624x385@Las-Provincias-624x385.jpg">
+
+        <ion-card-header>
+            <ion-card-subtitle>
+                seis de febrero del 2019
+            </ion-card-subtitle>
+            <ion-card-title>
+                La exposición de Harry Potter visitará Valencia
+            </ion-card-title>
+        </ion-card-header>
 
     </ion-card>
+
+    <div class="spacer" style="width:100%;height:30px;"></div>
+
+    <ion-card class="welcome-card">
+
+        <img src="https://www.ondamedia.es/wp-content/uploads/2019/01/harry-potter-caliz-reuters-kovG-U70360695886L3H-624x385@Las-Provincias-624x385.jpg">
+
+        <ion-card-header>
+            <ion-card-subtitle>
+                seis de febrero del 2019
+            </ion-card-subtitle>
+            <ion-card-title>
+                La exposición de Harry Potter visitará Valencia
+            </ion-card-title>
+        </ion-card-header>
+
+    </ion-card>
+
+    <div class="spacer" style="width:100%;height:30px;"></div>
+
+    <div class="chat-box">
+
+        <ion-grid padding class="chat-head">
+
+            <ion-row color="dark">
+                <ion-col size-sm (click)="this.expandBox()">
+                    <ion-icon [name]="this.arrow ? 'arrow-dropup-circle' : 'arrow-dropdown-circle'" style="zoom:1.5;" color="light"></ion-icon>
+                </ion-col>
+                <ion-col size-sm>
+                    col
+                </ion-col>
+                <ion-col size-sm>
+                    col
+                </ion-col>
+                <ion-col size-sm>
+                    col
+                </ion-col>
+                <ion-col size-sm>
+                    col
+                </ion-col>
+                <ion-col size-sm>
+                    <ion-icon name="play" style="zoom:1.5;" color="light"></ion-icon>
+                </ion-col>
+            </ion-row>
+
+        </ion-grid>
+
+        <div class="chat-body">
+
+            <ion-slides pager="true">
+                <ion-slide *ngFor="let data of this.contact">
+                    <ion-card>
+                        <img src="{{data.url}}">
+                    </ion-card>
+                </ion-slide>
+            </ion-slides>
+
+        </div>
+    </div>
 
 
 </ion-content>
