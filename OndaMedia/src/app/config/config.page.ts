@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import * as $ from 'jquery'
 
 import { Storage } from '@ionic/storage';
 
@@ -13,10 +14,12 @@ export class ConfigPage implements OnInit {
 
   constructor( private router: Router, private storage: Storage ) {  }
 
-  automatic:boolean; // Flag Reproduccion automatica
+  public automatic:boolean; // Flag Reproduccion automatica
+  public arrow :boolean = false;
 
   ngOnInit() {
     this.getAutomaticValue(); // Al entrar a page, se verifica la configuracion realizada por el User
+    $('.chat-body').slideToggle('slow');
   }
 
   getAutomaticValue(){
@@ -41,5 +44,12 @@ export class ConfigPage implements OnInit {
   privacy(){
     this.router.navigate(['/menu/privacy']);
   }
+
+  
+
+  expandBox(){
+    $('.chat-body').slideToggle('slow');
+    this.arrow = !this.arrow;
+}
 
 }

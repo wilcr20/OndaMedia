@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
+
 @Component({
   selector: 'app-news',
   templateUrl: './news.page.html',
@@ -10,6 +11,8 @@ export class NewsPage implements OnInit {
   constructor() { }
 
   ngOnInit() {
+
   }
+
 
 }

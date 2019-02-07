@@ -1,7 +1,7 @@
 <ion-header>
   <ion-toolbar>
       <ion-buttons slot="start">
-          <ion-menu-button style="color:royalblue" autoHide="false"></ion-menu-button>
+          <ion-menu-button style="color:royalblue" autoHide="true"></ion-menu-button>
       </ion-buttons>
     <ion-title style="color:royalblue;">Configuración </ion-title>
   </ion-toolbar>
@@ -15,11 +15,11 @@
 <ion-toggle checked="true"></ion-toggle> -->
 
 <ion-list style="margin-bottom:12%;">
-    <ion-item class="lineColor">
+    <ion-item class="lineColor" no-padding no-margin>
       <div style="margin-top:2%;" >
           <ion-label>Reproduccion automatica</ion-label>
           <small style="margin-top:1%; color:gray" *ngIf="!automatic"> Al abrir la aplicacion no se reproducirá el directo de manera automatica </small>
-          <small style="margin-top:1%; color:gray" *ngIf="automatic"> Esto reproducirá de forma automatica el directa al abrir la aplicacion </small>
+          <small style="margin-top:1%; color:gray" *ngIf="automatic"> Esto reproducirá de forma automatica el directo al abrir la aplicacion </small>
       </div>
       <ion-toggle id="switchAutom" color="danger" (click)= "switch()"></ion-toggle>
     </ion-item>
@@ -27,14 +27,14 @@
 
     <small> Legal</small>
     <ion-list style="margin-bottom:12%;">
-    <ion-item class="lineColor" (click)="privacy()"  >
-      <ion-label  >Politica de Privacidad</ion-label><ion-icon name="arrow-forward"  end></ion-icon>
+    <ion-item class="lineColor" (click)="privacy()" no-padding no-margin >
+      <ion-label >Politica de Privacidad</ion-label><ion-icon name="arrow-forward"  end></ion-icon>
     </ion-item>
   </ion-list>
 
   <small> Sobre el App</small>
     <ion-list>
-    <ion-item class="lineColor" >
+    <ion-item class="lineColor"  no-padding no-margin>
         <div style="margin-top:2%;" >
             <ion-label>Versión de la aplicación</ion-label>
             <small style="margin-top:1%; color:gray">1.0.0 </small>
@@ -42,7 +42,50 @@
     </ion-item>
   </ion-list>
 
-   
-  
+
+  <!-- Box player music -->
+
+  <div class="spacer" style="width:100%;height:30px; margin-bottom:0%; margin-top:90%;"></div>
+
+    <div class="chat-box">
+
+        <ion-grid padding class="chat-head">
+
+            <ion-row color="dark">
+                <ion-col size-sm (click)="this.expandBox()">
+                    <ion-icon [name]="this.arrow ? 'arrow-dropup-circle' : 'arrow-dropdown-circle'" style="zoom:1.5;" color="light"></ion-icon>
+                </ion-col>
+                <ion-col size-sm>
+                    col
+                </ion-col>
+                <ion-col size-sm>
+                    col
+                </ion-col>
+                <ion-col size-sm>
+                    col
+                </ion-col>
+                <ion-col size-sm>
+                    col
+                </ion-col>
+                <ion-col size-sm>
+                    <ion-icon name="play" style="zoom:1.5;" color="light"></ion-icon>
+                </ion-col>
+            </ion-row>
+
+        </ion-grid>
+
+        <div class="chat-body">
+
+            <ion-slides pager="true">
+                <ion-slide *ngFor="let data of this.contact">
+                    <ion-card>
+                        <img src="{{data.url}}">
+                    </ion-card>
+                </ion-slide>
+            </ion-slides>
+
+        </div>
+    </div>
+<!--          -->
 
 </ion-content>

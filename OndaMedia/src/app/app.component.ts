@@ -35,4 +35,6 @@ export class AppComponent {
   redirectNews(){
     this.router.navigate(['/news']);
   }
+
+  
 }
