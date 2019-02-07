@@ -1,0 +1,48 @@
+<ion-header>
+  <ion-toolbar>
+      <ion-buttons slot="start">
+          <ion-menu-button style="color:royalblue" autoHide="false"></ion-menu-button>
+      </ion-buttons>
+    <ion-title style="color:royalblue;">Configuración </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding> 
+
+  <small> Parametros</small>
+
+<!-- Checked Toggle
+<ion-toggle checked="true"></ion-toggle> -->
+
+<ion-list style="margin-bottom:12%;">
+    <ion-item class="lineColor">
+      <div style="margin-top:2%;" >
+          <ion-label>Reproduccion automatica</ion-label>
+          <small style="margin-top:1%; color:gray" *ngIf="!automatic"> Al abrir la aplicacion no se reproducirá el directo de manera automatica </small>
+          <small style="margin-top:1%; color:gray" *ngIf="automatic"> Esto reproducirá de forma automatica el directa al abrir la aplicacion </small>
+      </div>
+      <ion-toggle id="switchAutom" color="danger" (click)= "switch()"></ion-toggle>
+    </ion-item>
+  </ion-list>
+
+    <small> Legal</small>
+    <ion-list style="margin-bottom:12%;">
+    <ion-item class="lineColor" (click)="privacy()"  >
+      <ion-label  >Politica de Privacidad</ion-label><ion-icon name="arrow-forward"  end></ion-icon>
+    </ion-item>
+  </ion-list>
+
+  <small> Sobre el App</small>
+    <ion-list>
+    <ion-item class="lineColor" >
+        <div style="margin-top:2%;" >
+            <ion-label>Versión de la aplicación</ion-label>
+            <small style="margin-top:1%; color:gray">1.0.0 </small>
+        </div>
+    </ion-item>
+  </ion-list>
+
+   
+  
+
+</ion-content>

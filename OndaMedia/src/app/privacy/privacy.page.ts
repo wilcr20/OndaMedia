@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-privacy',
@@ -7,9 +9,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PrivacyPage implements OnInit {
 
-  constructor() { }
+  constructor( private router: Router) { }
 
   ngOnInit() {
+  }
+
+  //Variables NgIf del Switch 
+
+  
+
+  back(){
+    this.router.navigate(['/menu/config']);
   }
 
 }

@@ -81,7 +81,7 @@ export class MenuPage implements OnInit {
   },
   {
     title: "Configuración",
-    url:"/menu/radio-channels",
+    url:"/menu/config",
     icon:'settings'
   }
 ];
@@ -96,5 +96,7 @@ export class MenuPage implements OnInit {
 
   ngOnInit() {
   }
+
+  
 
 }

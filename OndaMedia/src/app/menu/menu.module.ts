@@ -21,6 +21,7 @@ const routes: Routes = [
       { path: 'our-app', loadChildren: '../our-app/our-app.module#OurAppPageModule' },
       { path: 'contact', loadChildren: '../contact/contact.module#ContactPageModule' },
       { path: 'privacy', loadChildren: '../privacy/privacy.module#PrivacyPageModule' },
+      { path: 'config', loadChildren: '../config/config.module#ConfigPageModule' }
     ]
   },{
     path:'',
