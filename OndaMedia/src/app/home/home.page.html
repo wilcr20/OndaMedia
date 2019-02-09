@@ -20,9 +20,16 @@
 
         <div class="spacer" style="width:100%;height:80px;"></div>
 
-        <ion-button padding shape="round" color="dark">
-            <ion-icon slot="start" name="play"></ion-icon>
+        <ion-button *ngIf="!this.playpauseBoolean" padding shape="round" color="dark" (click)="playpause()">
+            <ion-icon slot="start" name="play" color="success"></ion-icon>
             EN DIRECTO
+        </ion-button>
+
+        <ion-button *ngIf="this.playpauseBoolean" padding shape="round" color="dark" (click)="playpause()">
+            <ion-avatar slot="start">
+                <img src="https://loading.io/spinners/equalizer/lg.equalizer-bars-loader.gif">
+            </ion-avatar>
+            <ion-label slot="end"> &nbsp;&nbsp;&nbsp;EN DIRECTO</ion-label>
         </ion-button>
 
         <div class="spacer" style="width:100%;height:130px;"></div>
@@ -32,7 +39,8 @@
     <div class="spacer" style="width:100%;height:30px;"></div>
 
 
-    <ion-card class="welcome-card">
+
+    <ion-card color="dark">
 
         <img src="https://www.ondamedia.es/wp-content/uploads/2019/01/harry-potter-caliz-reuters-kovG-U70360695886L3H-624x385@Las-Provincias-624x385.jpg">
 
@@ -47,47 +55,23 @@
 
     </ion-card>
 
-    <div class="spacer" style="width:100%;height:30px;"></div>
+</ion-content>
 
-    <ion-card class="welcome-card">
-
-        <img src="https://www.ondamedia.es/wp-content/uploads/2019/01/harry-potter-caliz-reuters-kovG-U70360695886L3H-624x385@Las-Provincias-624x385.jpg">
-
-        <ion-card-header>
-            <ion-card-subtitle>
-                seis de febrero del 2019
-            </ion-card-subtitle>
-            <ion-card-title>
-                La exposición de Harry Potter visitará Valencia
-            </ion-card-title>
-        </ion-card-header>
-
-    </ion-card>
-
-    <div class="spacer" style="width:100%;height:30px;"></div>
-
-    <div class="chat-box">
+<ion-footer>
+    <ion-toolbar class="chat-box" color="dark">
 
         <ion-grid padding class="chat-head">
 
-            <ion-row color="dark">
+
+            <ion-row>
                 <ion-col size-sm (click)="this.expandBox()">
-                    <ion-icon [name]="this.arrow ? 'arrow-dropup-circle' : 'arrow-dropdown-circle'" style="zoom:1.5;" color="light"></ion-icon>
+                    <ion-icon [name]="this.arrow ? 'arrow-dropdown' : 'arrow-dropup'" style="zoom:1.5;" color="purpure"></ion-icon>
                 </ion-col>
-                <ion-col size-sm>
-                    col
+                <ion-col size-sm (click)="mute()">
+                    <ion-icon [name]="this.muteunmuteBoolean ? 'volume-high' : 'volume-off'" color="warning"></ion-icon>
                 </ion-col>
-                <ion-col size-sm>
-                    col
-                </ion-col>
-                <ion-col size-sm>
-                    col
-                </ion-col>
-                <ion-col size-sm>
-                    col
-                </ion-col>
-                <ion-col size-sm>
-                    <ion-icon name="play" style="zoom:1.5;" color="light"></ion-icon>
+                <ion-col size-sm (click)="playpause()">
+                    <ion-icon [name]="this.playpauseBoolean? 'pause' : 'play'" color="warning"></ion-icon>
                 </ion-col>
             </ion-row>
 
@@ -104,7 +88,6 @@
             </ion-slides>
 
         </div>
-    </div>
 
-
-</ion-content>
+    </ion-toolbar>
+</ion-footer>

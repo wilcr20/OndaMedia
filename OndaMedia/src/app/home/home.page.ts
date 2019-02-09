@@ -11,6 +11,10 @@ import * as $ from 'jquery'
 })
 export class HomePage implements OnInit {
 
+  public  audio = new Audio();
+  public  playpauseBoolean : boolean = false; // Funtion: false=pase audio, true=play audio;
+  public  muteunmuteBoolean : boolean = false; // Funtion: false=off audio, true=on audio;
+
   private videoUrl = 'http://37.187.7.106/ondamusical/live.m3u8';
   private audioUrl = 'http://streaming1.ondamusicalradio.com:8100/onradio.mp3';
 
@@ -41,10 +45,12 @@ export class HomePage implements OnInit {
 
     this.menuCtrl.enable(true);
     this.contact.reverse();
+    this.audio.src = "http://streaming1.ondamusicalradio.com:8100/onradio.mp3";
     
    }
 
-  ngOnInit() {
+  ngOnInit( ) {
+    $('.chat-body').slideToggle('slow');
   }
 
   playStreamingVideo(){
@@ -57,13 +63,52 @@ export class HomePage implements OnInit {
 
   expandBox(){
   
-
       $('.chat-body').slideToggle('slow');
-      
       this.arrow = !this.arrow;
+      
   }
   
 
+  /********* START:  AUDIO FUNTIONS ***********/
+
+  play(){
+
+    this.audio.play();
+    
+  }
+
+  playpause(){
+
+      if ( this.playpauseBoolean == true) {
+        
+        this.audio.pause();
+        this.playpauseBoolean = false;
+     
+      } else {
+
+        this.audio.play();
+        this.playpauseBoolean = true;
+      }
+  }
+
+    
+  mute(){
+
+      if(this.audio.volume != 0) {
+
+        this.audio.volume = 0;
+        this.muteunmuteBoolean = false;
+        
+      } else {
+
+        this.audio.volume = 1;
+        this.muteunmuteBoolean = true;
+    
+      }
+
+  }
   
+  
+  /********* END:  AUDIO  FUNTIONS ***********/
   
 }

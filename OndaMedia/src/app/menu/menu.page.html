@@ -1,3 +1,6 @@
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
+
 <ion-app>
     <ion-menu contentId="menu" side="start">
 
@@ -7,7 +10,7 @@
 
             <ion-item *ngFor="let page of this.pages" [routerLink]="page.url" routerDirection="root" color="dark" no-line>
 
-                <ion-icon name="{{page.icon}}" slot="start" color="light"></ion-icon>
+                <ion-icon name="{{page.icon}}" slot="start" color="{{page.color}}"></ion-icon>
                 <ion-label>
                     {{page.title}}
                 </ion-label>
@@ -15,6 +18,28 @@
             </ion-item>
 
         </ion-content>
+
+        <ion-footer>
+            <ion-toolbar color="dark" class="social">
+
+                <ul>
+                    <a href="https://www.facebook.com/ondamedia.es">
+                        <li class="facebook"></li>
+                    </a>
+                    <a href="https://twitter.com/Onda_Media">
+                        <li class="twitter"></li>
+                    </a>
+                    <a href="https://www.instagram.com/ondamedia.es/">
+                        <li class="instagram"></li>
+                    </a>
+                    <a href="">
+                        <li class="google"></li>
+                    </a>
+                </ul>
+
+
+            </ion-toolbar>
+        </ion-footer>
     </ion-menu>
 
     <ion-router-outlet id="menu" main>
