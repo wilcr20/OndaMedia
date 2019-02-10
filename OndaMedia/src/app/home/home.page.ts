@@ -75,10 +75,8 @@ export class HomePage implements OnInit {
   }
 
   expandBox(){
-  
       $('.chat-body').slideToggle('slow');
       this.arrow = !this.arrow;
-      
   }
 
   /********* START:  AUDIO FUNTIONS ***********/
