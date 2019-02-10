@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import * as $ from 'jquery'
-
-import { Storage } from '@ionic/storage';
+import {GeneralService} from '../services/general.service';
 
 
 @Component({
@@ -12,40 +11,31 @@ import { Storage } from '@ionic/storage';
 })
 export class ConfigPage implements OnInit {
 
-  constructor( private router: Router, private storage: Storage ) {  }
+  constructor( private router: Router , private genServ:GeneralService) {  }
 
-  public automatic:boolean; // Flag Reproduccion automatica
   public arrow :boolean = false;
+ 
+  ngOnInit() { 
 
-  ngOnInit() {
-    this.getAutomaticValue(); // Al entrar a page, se verifica la configuracion realizada por el User
-    $('.chat-body').slideToggle('slow');
-  }
-
-  getAutomaticValue(){
-    this.storage.get('automatic').then((val) => {
-      this.automatic= val;
-      if(this.automatic){ //True
+    this.genServ.getAutomaticValue(); // Al entrar a page, se verifica la configuracion realizada por el User
+    let hideFooterTimeout = setTimeout( () => {  // Use await/async
+      console.log("falg ", this.genServ.automatic)
+      if(this.genServ.automatic == true){ //True
         document.getElementById("switchAutom").setAttribute('checked', 'checked');
       }
-    });
+    }, 600);
+     
+    $('.chat-body').slideToggle('slow');
   }
-
-  setAutomaticValue(){
-    let newAuto = !this.automatic;  // Se coloca el inverso al mover switch
-    this.automatic = newAuto;
-    this.storage.set('automatic', newAuto);    
-  }
-
+  
+ 
   switch(){
-    this.setAutomaticValue(); // True --> False, False --> True
+    this.genServ.setAutomaticValue(); // True --> False, False --> True
   }
 
   privacy(){
     this.router.navigate(['/menu/privacy']);
   }
-
-  
 
   expandBox(){
     $('.chat-body').slideToggle('slow');

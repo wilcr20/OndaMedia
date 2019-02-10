@@ -3,6 +3,7 @@ import { MenuController } from '@ionic/angular';
 import { StreamingMedia, StreamingVideoOptions, StreamingAudioOptions } from '@ionic-native/streaming-media/ngx';
 import * as $ from 'jquery'
 
+import {GeneralService} from '../services/general.service';
 
 @Component({
   selector: 'app-home',
@@ -41,7 +42,8 @@ export class HomePage implements OnInit {
 
   constructor(
     public menuCtrl: MenuController,
-    public streamingMedia: StreamingMedia) {
+    public streamingMedia: StreamingMedia,
+    private genServ:GeneralService) {
 
     this.menuCtrl.enable(true);
     this.contact.reverse();
@@ -51,6 +53,17 @@ export class HomePage implements OnInit {
 
   ngOnInit( ) {
     $('.chat-body').slideToggle('slow');
+
+    this.genServ.getAutomaticValue(); // Al entrar a page, se verifica la configuracion realizada por el User
+    let hideFooterTimeout = setTimeout( () => {  // Use await/async
+      console.log("flag ", this.genServ.automatic)
+      if(this.genServ.automatic == true){ //True
+        //document.getElementById("playBtn").click();
+        this.play(); // Reproduce automaticamente el directo de audio
+        //this.playpauseBoolean= true; //Se habilita Spinner
+      }
+    }, 800);
+ 
   }
 
   playStreamingVideo(){
@@ -67,14 +80,12 @@ export class HomePage implements OnInit {
       this.arrow = !this.arrow;
       
   }
-  
 
   /********* START:  AUDIO FUNTIONS ***********/
 
   play(){
-
     this.audio.play();
-    
+    this.playpauseBoolean= true; //Se habilita Spinner
   }
 
   playpause(){
