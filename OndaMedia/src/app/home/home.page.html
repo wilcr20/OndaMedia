@@ -18,21 +18,23 @@
 
     <div class="backgroundImg">
 
-        <div class="spacer" style="width:100%;height:80px;"></div>
 
-        <ion-button *ngIf="!this.playpauseBoolean" padding shape="round" color="dark" (click)="playpause()">
+        <br> <br> <br> <br> <br> <br>
+
+        <ion-button size="small" *ngIf="!this.Audio.playpauseBoolean" padding shape="round" color="dark" (click)="this.Audio.playpause()">
             <ion-icon slot="start" name="play" color="success"></ion-icon>
             EN DIRECTO
         </ion-button>
 
-        <ion-button *ngIf="this.playpauseBoolean" padding shape="round" color="dark" (click)="playpause()">
+        <ion-button size="small" *ngIf="this.Audio.playpauseBoolean" padding shape="round" color="dark">
             <ion-avatar slot="start">
                 <img src="https://loading.io/spinners/equalizer/lg.equalizer-bars-loader.gif">
             </ion-avatar>
             <ion-label slot="end"> &nbsp;&nbsp;&nbsp;EN DIRECTO</ion-label>
         </ion-button>
 
-        <div class="spacer" style="width:100%;height:130px;"></div>
+        <br> <br> <br> <br> <br> <br> <br> <br> <br> <br>
+
 
     </div>
 
@@ -55,39 +57,11 @@
 
     </ion-card>
 
+
 </ion-content>
 
 <ion-footer>
-    <ion-toolbar class="chat-box" color="dark">
 
-        <ion-grid padding class="chat-head">
+    <app-player></app-player>
 
-
-            <ion-row>
-                <ion-col size-sm (click)="this.expandBox()">
-                    <ion-icon [name]="this.arrow ? 'arrow-dropdown' : 'arrow-dropup'" style="zoom:1.5;" color="purpure"></ion-icon>
-                </ion-col>
-                <ion-col size-sm (click)="mute()">
-                    <ion-icon [name]="this.muteunmuteBoolean ? 'volume-high' : 'volume-off'" color="warning"></ion-icon>
-                </ion-col>
-                <ion-col size-sm (click)="playpause()">
-                    <ion-icon [name]="this.playpauseBoolean? 'pause' : 'play'" color="warning"></ion-icon>
-                </ion-col>
-            </ion-row>
-
-        </ion-grid>
-
-        <div class="chat-body">
-
-            <ion-slides pager="true">
-                <ion-slide *ngFor="let data of this.contact">
-                    <ion-card>
-                        <img src="{{data.url}}">
-                    </ion-card>
-                </ion-slide>
-            </ion-slides>
-
-        </div>
-
-    </ion-toolbar>
-</ion-footer> 
+</ion-footer>

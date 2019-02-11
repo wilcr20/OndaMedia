@@ -1,10 +1,10 @@
 <ion-header>
-  <ion-toolbar>
-      <ion-buttons slot="start">
-          <ion-menu-button style="color:royalblue" autoHide="false"></ion-menu-button>
-      </ion-buttons>
-    <ion-title style="color:royalblue">La lista</ion-title>
-  </ion-toolbar>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-menu-button style="color:royalblue" autoHide="false"></ion-menu-button>
+        </ion-buttons>
+        <ion-title style="color:royalblue">La lista</ion-title>
+    </ion-toolbar>
 </ion-header>
 
 
@@ -14,56 +14,63 @@
   background-size: 100% 100%;
 } -->
 
-<ion-content >
+<ion-content>
 
 
-      <ion-list >         <!--Se hara uso de un ngFor, por lo que de acuerdo al index, se diferecniaran las canciones y el id HTML  -->
+    <ion-list>
+        <!--Se hara uso de un ngFor, por lo que de acuerdo al index, se diferecniaran las canciones y el id HTML  -->
         <ion-item class="lineColor exito" no-padding no-margin>
-          <div  style=" width: 150px;height: 160px; background-image: url('https://d1csarkz8obe9u.cloudfront.net/posterpreviews/techno-club-music-album-cover-flyer-template-c05f6a0e3cf975dee969c05ed9c7b25f_screen.jpg?ts=1483748042');background-size: 100% 100%;"> 
-            <img id="audio0" src="http://www.pngmart.com/files/3/Play-Button-PNG-Image.png" alt="" class="playButton" (click)="playMusic(0)"  >
+            <div style=" width: 150px;height: 160px; background-image: url('https://d1csarkz8obe9u.cloudfront.net/posterpreviews/techno-club-music-album-cover-flyer-template-c05f6a0e3cf975dee969c05ed9c7b25f_screen.jpg?ts=1483748042');background-size: 100% 100%;">
+                <img id="audio0" src="http://www.pngmart.com/files/3/Play-Button-PNG-Image.png" alt="" class="playButton" (click)="playMusic(0)">
 
-          </div>
- 
-          <div style="float:right; margin-top:1%;margin-left:3%" >
-            <h5 style="background-color:blue;color:white" >Exito de la semana</h5>
-              <h4 style="margin-top:1%;margin-bottom:2%"> Nombre de Cancion </h4>
-              <small> Nombre de banda/Cantante</small>
-          </div>
+            </div>
+
+            <div style="float:right; margin-top:1%;margin-left:3%">
+                <h5 style="background-color:blue;color:white">Exito de la semana</h5>
+                <h4 style="margin-top:1%;margin-bottom:2%"> Nombre de Cancion </h4>
+                <small> Nombre de banda/Cantante</small>
+            </div>
         </ion-item>
 
 
         <ion-item class="lineColor" no-padding no-margin>
-            <div style=" width: 150px;height: 160px; background-image: url('https://d1csarkz8obe9u.cloudfront.net/posterpreviews/techno-club-music-album-cover-flyer-template-c05f6a0e3cf975dee969c05ed9c7b25f_screen.jpg?ts=1483748042');background-size: 100% 100%;"> 
-              <img id="audio1" src="http://www.pngmart.com/files/3/Play-Button-PNG-Image.png" alt="" class="playButton" (click)="playMusic(1)"  >
+            <div style=" width: 150px;height: 160px; background-image: url('https://d1csarkz8obe9u.cloudfront.net/posterpreviews/techno-club-music-album-cover-flyer-template-c05f6a0e3cf975dee969c05ed9c7b25f_screen.jpg?ts=1483748042');background-size: 100% 100%;">
+                <img id="audio1" src="http://www.pngmart.com/files/3/Play-Button-PNG-Image.png" alt="" class="playButton" (click)="playMusic(1)">
             </div>
-            <div style="margin-top:1%;margin-left:3%;" >
-              <h3 >1</h3>
+            <div style="margin-top:1%;margin-left:3%;">
+                <h3>1</h3>
                 <h4 style="margin-top:1%;margin-bottom:2%"> Nombre de Cancion </h4>
                 <small> Nombre de banda/Cantante</small>
             </div>
-          </ion-item>
-          <ion-item class="lineColor" no-padding no-margin>
-              <div  style=" width: 150px;height: 160px; background-image: url('https://d1csarkz8obe9u.cloudfront.net/posterpreviews/techno-club-music-album-cover-flyer-template-c05f6a0e3cf975dee969c05ed9c7b25f_screen.jpg?ts=1483748042');background-size: 100% 100%;"> 
-                <img id="audio2" src="http://www.pngmart.com/files/3/Play-Button-PNG-Image.png" alt="" class="playButton" (click)="playMusic(2)"  >
-              </div>
-              <div style="margin-top:2%;margin-left:3%;"  >
-                <h3 >2</h3>
-                  <h4 style="margin-top:1%;margin-bottom:2%"> Nombre de Cancion </h4>
-                  <small> Nombre de banda/Cantante</small>
-              </div>
-            </ion-item>
-            <ion-item class="lineColor" no-padding no-margin>
-                <div  style=" width: 150px;height: 160px; background-image: url('https://d1csarkz8obe9u.cloudfront.net/posterpreviews/techno-club-music-album-cover-flyer-template-c05f6a0e3cf975dee969c05ed9c7b25f_screen.jpg?ts=1483748042');background-size: 100% 100%;"> 
-                  <img id="audio3" src="http://www.pngmart.com/files/3/Play-Button-PNG-Image.png" alt="" class="playButton" (click)="playMusic(3)"  >
-                </div>
-                <div style="margin-top:2%;margin-left:3%;" >
-                  <h3 >3</h3>
-                    <h4 style="margin-top:1%;margin-bottom:2%"> Nombre de Cancion </h4>
-                    <small> Nombre de banda/Cantante</small>
-                </div>
-              </ion-item>
-      </ion-list>
+        </ion-item>
+        <ion-item class="lineColor" no-padding no-margin>
+            <div style=" width: 150px;height: 160px; background-image: url('https://d1csarkz8obe9u.cloudfront.net/posterpreviews/techno-club-music-album-cover-flyer-template-c05f6a0e3cf975dee969c05ed9c7b25f_screen.jpg?ts=1483748042');background-size: 100% 100%;">
+                <img id="audio2" src="http://www.pngmart.com/files/3/Play-Button-PNG-Image.png" alt="" class="playButton" (click)="playMusic(2)">
+            </div>
+            <div style="margin-top:2%;margin-left:3%;">
+                <h3>2</h3>
+                <h4 style="margin-top:1%;margin-bottom:2%"> Nombre de Cancion </h4>
+                <small> Nombre de banda/Cantante</small>
+            </div>
+        </ion-item>
+        <ion-item class="lineColor" no-padding no-margin>
+            <div style=" width: 150px;height: 160px; background-image: url('https://d1csarkz8obe9u.cloudfront.net/posterpreviews/techno-club-music-album-cover-flyer-template-c05f6a0e3cf975dee969c05ed9c7b25f_screen.jpg?ts=1483748042');background-size: 100% 100%;">
+                <img id="audio3" src="http://www.pngmart.com/files/3/Play-Button-PNG-Image.png" alt="" class="playButton" (click)="playMusic(3)">
+            </div>
+            <div style="margin-top:2%;margin-left:3%;">
+                <h3>3</h3>
+                <h4 style="margin-top:1%;margin-bottom:2%"> Nombre de Cancion </h4>
+                <small> Nombre de banda/Cantante</small>
+            </div>
+        </ion-item>
+    </ion-list>
 
 
 
 </ion-content>
+
+<ion-footer>
+
+    <app-player></app-player>
+
+</ion-footer>

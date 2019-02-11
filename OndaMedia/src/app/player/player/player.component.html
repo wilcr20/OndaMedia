@@ -1,0 +1,54 @@
+<ion-toolbar class="chat-box" color="dark">
+
+    <ion-grid padding class="chat-head">
+
+
+        <ion-row>
+            <ion-col size-sm (click)="this.expandBox()">
+                <ion-icon [name]="this.arrow ? 'arrow-dropup' : 'arrow-dropdown'" color="purpure"></ion-icon>
+            </ion-col>
+            <ion-col size-sm (click)="mute()">
+                <ion-icon [name]="this.muteunmuteBoolean ? 'volume-high' : 'volume-off'" color="warning"></ion-icon>
+            </ion-col>
+            <ion-col size-sm (click)="playpause()">
+                <ion-icon [name]="this.playpauseBoolean? 'pause' : 'play'" color="warning"></ion-icon>
+            </ion-col>
+        </ion-row>
+
+    </ion-grid>
+
+
+    <div class="chat-body">
+
+        <ion-slides pager="true">
+            <ion-slide>
+                <ion-card>
+                    <img src="{{this.contact[0].url}}">
+                </ion-card>
+            </ion-slide>
+            <ion-slide>
+                <ion-card>
+                    <img src="{{this.contact[1].url}}">
+                </ion-card>
+            </ion-slide>
+            <ion-slide>
+                <ion-card>
+                    <img src="{{this.contact[2].url}}">
+                </ion-card>
+            </ion-slide>
+            <ion-slide>
+                <ion-card>
+                    <img src="{{this.contact[3].url}}">
+                </ion-card>
+            </ion-slide>
+            <ion-slide>
+                <ion-card>
+                    <img src="{{this.contact[4].url}}">
+                </ion-card>
+            </ion-slide>
+        </ion-slides>
+
+    </div>
+
+
+</ion-toolbar>

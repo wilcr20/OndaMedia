@@ -12,22 +12,31 @@ import { AppComponent } from './app.component';
 import { StreamingMedia } from '@ionic-native/streaming-media/ngx';
 
 import { IonicStorageModule } from '@ionic/storage';
+import { ComponentsModule } from './player/components.module';
+import { PlayerComponent } from './player/player/player.component';
 
 
 @NgModule({
+
+  
   declarations: [AppComponent],
+
   entryComponents: [],
+
   imports: [
+    ComponentsModule,
     BrowserModule,
     IonicModule.forRoot(),
     AppRoutingModule,
     IonicStorageModule.forRoot()],
+
   providers: [
+    PlayerComponent,
     StatusBar,
     SplashScreen,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     StreamingMedia,
-    
+
   ],
   bootstrap: [AppComponent]
 })
