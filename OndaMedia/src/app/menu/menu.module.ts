@@ -22,7 +22,7 @@ const routes: Routes = [
       { path: 'contact', loadChildren: '../contact/contact.module#ContactPageModule' },
       { path: 'privacy', loadChildren: '../privacy/privacy.module#PrivacyPageModule' },
       { path: 'config', loadChildren: '../config/config.module#ConfigPageModule' }
-    ]
+    ] 
   },{
     path:'',
     redirectTo: '/menu/home'

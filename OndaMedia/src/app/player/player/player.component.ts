@@ -56,7 +56,6 @@ export class PlayerComponent implements OnInit {
 
     this.genServ.getAutomaticValue(); // Al entrar a page, se verifica la configuracion realizada por el User
     let hideFooterTimeout = setTimeout( () => {  // Use await/async
-      console.log("flag ", this.genServ.automatic)
       if(this.genServ.automatic == true){ //True
         //document.getElementById("playBtn").click();
         this.play(); // Reproduce automaticamente el directo de audio

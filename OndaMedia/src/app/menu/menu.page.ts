@@ -35,6 +35,12 @@ export class MenuPage implements OnInit {
     color:"danger"
   },
   {
+    title: "On Tv",
+    url:"/menu/on-tv",
+    icon:'tv',
+    color:"secondary"
+  }, 
+  {
     title: "Configuración",
     url:"/menu/config",
     icon:'settings',
@@ -46,7 +52,7 @@ export class MenuPage implements OnInit {
 
   constructor( private router:Router) {
     this.router.events.subscribe( (event:RouterEvent) =>{
-        this.selectedPath=event.url;
+        this.selectedPath=event.url; // Realiza rl moviemiento de Page dinamico
     });
    }
 
