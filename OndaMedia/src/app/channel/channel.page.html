@@ -1,22 +1,16 @@
 <ion-header>
     <ion-toolbar color="dark">
         <ion-buttons slot="start">
-            <ion-menu-button autoHide="false"></ion-menu-button>
+            <ion-back-button></ion-back-button>
         </ion-buttons>
-        <ion-title text-center>Programas y podcats</ion-title>
+        <ion-title>ON Radio</ion-title>
     </ion-toolbar>
 </ion-header>
 
 <ion-content>
 
 
-    <ion-slides padding pager="true" [options]="slideOpts">
-        <ion-slide *ngFor="let data of this.contact" (click)="this.openPage('channel');">
-            <img src="{{data.url}}">
-        </ion-slide>
-    </ion-slides>
-
-    <br>
+    <img src="https://www.ondamedia.es/wp-content/uploads/2019/01/ONRADIO-9-880x529.png">
 
     <ion-toolbar>
         <ion-segment [(ngModel)]="this.type">
@@ -25,6 +19,9 @@
             </ion-segment-button>
             <ion-segment-button value="Momentos">
                 Momentos
+            </ion-segment-button>
+            <ion-segment-button value="Actualidad">
+                Actualidad
             </ion-segment-button>
         </ion-segment>
     </ion-toolbar>
@@ -119,9 +116,28 @@
             </ion-item>
 
         </div>
+
+        <div *ngSwitchCase="'Actualidad'">
+
+            <br>
+
+            <ion-card color="dark" *ngFor="let data of this.contact">
+
+                <img src="https://www.ondamedia.es/wp-content/uploads/2019/01/harry-potter-caliz-reuters-kovG-U70360695886L3H-624x385@Las-Provincias-624x385.jpg">
+
+                <ion-card-header>
+                    <ion-card-subtitle>
+                        seis de febrero del 2019
+                    </ion-card-subtitle>
+                    <ion-card-title>
+                        La exposición de Harry Potter visitará Valencia
+                    </ion-card-title>
+                </ion-card-header>
+
+            </ion-card>
+
+        </div>
     </div>
-
-
 
 </ion-content>
 

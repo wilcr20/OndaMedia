@@ -14,12 +14,15 @@ export class ConfigPage implements OnInit {
   constructor( private router: Router , private genServ:GeneralService) {  }
 
   public arrow :boolean = false;
+  public automatic:boolean = false;
   
   ngOnInit() { 
 
     this.genServ.getAutomaticValue(); // Al entrar a page, se verifica la configuracion realizada por el User
     let hideFooterTimeout = setTimeout( () => {  // Use await/async
       
+      this.automatic =  this.genServ.automatic;
+
       if(this.genServ.automatic == true){ //True
         document.getElementById("switchAutom").setAttribute('checked', 'checked');
       }

@@ -1,9 +1,9 @@
 <ion-header>
-    <ion-toolbar>
+    <ion-toolbar color="dark">
         <ion-buttons slot="start">
-            <ion-menu-button style="color:royalblue" autoHide="true"></ion-menu-button>
+            <ion-menu-button autoHide="true"></ion-menu-button>
         </ion-buttons>
-        <ion-title style="color:royalblue;">Configuración </ion-title>
+        <ion-title text-center>Configuración </ion-title>
     </ion-toolbar>
 </ion-header>
 
@@ -18,8 +18,8 @@
         <ion-item class="lineColor" no-padding no-margin>
             <div style="margin-top:2%;">
                 <ion-label>Reproduccion automatica</ion-label>
-                <small style="margin-top:1%; color:gray" *ngIf="!automatic"> Al abrir la aplicacion no se reproducirá el directo de manera automatica </small>
-                <small style="margin-top:1%; color:gray" *ngIf="automatic"> Esto reproducirá de forma automatica el directo al abrir la aplicacion </small>
+                <small style="margin-top:1%; color:gray" *ngIf="!this.automatic"> Al abrir la aplicacion no se reproducirá el directo de manera automatica </small>
+                <small style="margin-top:1%; color:gray" *ngIf="this.automatic"> Esto reproducirá de forma automatica el directo al abrir la aplicacion </small>
             </div>
             <ion-toggle id="switchAutom" color="danger" (click)="switch()"></ion-toggle>
         </ion-item>

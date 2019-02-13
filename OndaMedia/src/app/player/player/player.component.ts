@@ -51,8 +51,16 @@ export class PlayerComponent implements OnInit {
     
    }
 
+   ngAfterViewInit(){
+     
+    if(this.arrow == false){
+      $('.chat-body').slideToggle();
+    }
+    
+   }
+
   ngOnInit( ) {
-    $('.chat-body').slideToggle('slow');
+
 
     this.genServ.getAutomaticValue(); // Al entrar a page, se verifica la configuracion realizada por el User
     let hideFooterTimeout = setTimeout( () => {  // Use await/async

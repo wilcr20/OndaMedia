@@ -1,9 +1,9 @@
 <ion-header>
-    <ion-toolbar>
+    <ion-toolbar color="dark">
         <ion-buttons slot="start">
-            <ion-menu-button style="color:royalblue" autoHide="false"></ion-menu-button>
+            <ion-menu-button autoHide="false"></ion-menu-button>
         </ion-buttons>
-        <ion-title style="color:royalblue">La lista</ion-title>
+        <ion-title text-center>La lista</ion-title>
     </ion-toolbar>
 </ion-header>
 
@@ -19,7 +19,7 @@
 
     <ion-list>
         <!--Se hara uso de un ngFor, por lo que de acuerdo al index, se diferecniaran las canciones y el id HTML  -->
-        <ion-item class="lineColor exito" no-padding no-margin>
+        <ion-item class="lineColor exito" no-padding no-margin color="purpure">
             <div style=" width: 150px;height: 160px; background-image: url('https://d1csarkz8obe9u.cloudfront.net/posterpreviews/techno-club-music-album-cover-flyer-template-c05f6a0e3cf975dee969c05ed9c7b25f_screen.jpg?ts=1483748042');background-size: 100% 100%;">
                 <img id="audio0" src="http://www.pngmart.com/files/3/Play-Button-PNG-Image.png" alt="" class="playButton" (click)="playMusic(0)">
             </div>

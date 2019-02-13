@@ -32,9 +32,7 @@ export class AppComponent {
   redirectHome(){
     this.router.navigate(['/home']);
   }
-  redirectNews(){
-    this.router.navigate(['/news']);
-  }
+  
 
   
 }
