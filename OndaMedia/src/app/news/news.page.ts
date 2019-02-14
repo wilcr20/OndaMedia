@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -8,11 +9,29 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NewsPage implements OnInit {
 
-  constructor() { }
+
+  constructor(private router: Router) { }
 
   ngOnInit() {
 
   }
 
+
+  openPage(page) {  
+
+    try {
+
+      switch(page) {
+        case "note":
+            this.router.navigate(['/menu/note']);
+            break;
+        default:
+      }
+
+    } catch (error) {
+      console.log(error);
+    }
+  
+  }
 
 }

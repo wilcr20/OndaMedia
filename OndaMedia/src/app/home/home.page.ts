@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { PlayerComponent } from '../player/player/player.component';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -11,9 +12,26 @@ export class HomePage implements OnInit {
 
   @ViewChild(PlayerComponent) Audio: PlayerComponent;
 
-  constructor () {}
+  constructor (private router: Router) {}
 
   ngOnInit() {}
 
+
+  openPage(page) {  
+
+    try {
+
+      switch(page) {
+        case "note":
+            this.router.navigate(['/menu/note']);
+            break;
+        default:
+      }
+
+    } catch (error) {
+      console.log(error);
+    }
   
+  }
+ 
 }

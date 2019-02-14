@@ -24,13 +24,13 @@ export class MenuPage implements OnInit {
   },
   {
     title: "Programas y podcats",
-    url:"/menu/news",
+    url:"/menu/radio-channels",
     icon:'microphone',
     color:"blue"
   },
   {
     title: "Actualidad",
-    url:"/menu/events",
+    url:"/menu/news",
     icon:'paper',
     color:"danger"
   },

@@ -12,7 +12,9 @@ const routes: Routes = [
   // { path: 'our-app', loadChildren: './our-app/our-app.module#OurAppPageModule' },
   // { path: 'contact', loadChildren: './contact/contact.module#ContactPageModule' },
   // { path: 'privacy', loadChildren: './privacy/privacy.module#PrivacyPageModule' },
-    { path: '', loadChildren: './menu/menu.module#MenuPageModule' },
+  { path: '', loadChildren: './menu/menu.module#MenuPageModule' },
+  //{ path: 'channel', loadChildren: './channel/channel.module#ChannelPageModule' },
+  //{ path: 'note', loadChildren: './note/note.module#NotePageModule' },
   // { path: 'config', loadChildren: './config/config.module#ConfigPageModule' }
 ];
 

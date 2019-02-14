@@ -1,51 +1,5 @@
-#moveTxt {
-    -webkit-animation: moving 5s infinite;
-    animation: moving 5s infinite;
-}
-
-@keyframes moving {
-    from {
-        transform: translateX(0px);
-    }
-    to {
-        transform: translateX(-200px);
-    }
-}
-
-.backgroundCard {
-    --background: #fff url('https://www.ondamedia.es/wp-content/uploads/2014/11/ON-HITS-880x529.png') no-repeat center center / cover;
-}
-
 .backgroundImg {
     background-image: url('https://www.ondamedia.es/wp-content/uploads/2019/01/alberto-herreros2.png');
     background-repeat: no-repeat;
     background-size: 100% 100%;
 }
-
-
-/** ESTAR EXPAND BOX***/
-
-.chat-box {
-    position: sticky;
-    right: 0px;
-    bottom: 0px;
-    background: #b3ffec;
-    width: 100%;
-    border-radius: 5px 5px 0px 0px;
-}
-
-.chat-head {
-    width: inherit;
-    height: 50px;
-    background: #000000;
-}
-
-.chat-body {
-    height: 360px;
-    width: inherit;
-    overflow: auto;
-    margin-bottom: 50px;
-}
-
-
-/** END EXPAND BOX***/
