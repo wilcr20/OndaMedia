@@ -20,7 +20,7 @@ export class OnTvPage implements OnInit {
   }
 
   playVideo(){
-    console.log("PLAY")
+    console.log("playing video ...")
     let options: StreamingVideoOptions = {
          successCallback: () => { console.log('Video played') },
          errorCallback: (e) => { console.log('Error streaming') },
