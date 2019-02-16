@@ -1,12 +1,11 @@
-<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
-
-
 <ion-app>
-    <ion-menu contentId="menu" side="start">
+    <ion-menu contentId="menu" side="start" type="reveal" auto-hide="true">
 
         <ion-header></ion-header>
 
         <ion-content color="dark">
+
+            <br><br>
 
             <ion-item *ngFor="let page of this.pages" [routerLink]="page.url" routerDirection="root" color="dark" no-line>
 

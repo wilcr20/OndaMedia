@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
+import { PlayerComponent } from '../player/player/player.component';
 
 @Component({
   selector: 'app-radio-channels',
@@ -7,6 +8,8 @@ import { Router } from '@angular/router';
   styleUrls: ['./radio-channels.page.scss'],
 })
 export class RadioChannelsPage implements OnInit {
+
+  @ViewChild(PlayerComponent) Audio: PlayerComponent;
 
   public type:  string = "Programas";
 
@@ -24,6 +27,7 @@ export class RadioChannelsPage implements OnInit {
   constructor(private router: Router) { }
 
   ngOnInit() {
+    this.Audio.page = "other";
   }
 
   openPage(page) {  

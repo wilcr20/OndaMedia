@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { PlayerComponent } from '../player/player/player.component';
 
 @Component({
   selector: 'app-note',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NotePage implements OnInit {
 
+  @ViewChild(PlayerComponent) Audio: PlayerComponent;
+
+
   constructor() { }
 
   ngOnInit() {
+
+    this.Audio.page = "other";
   }
 
 }

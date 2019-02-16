@@ -15,7 +15,6 @@ export class GeneralService {
    getAutomaticValue(){
     this.storage.get('automatic').then((val) => {
       this.automatic= val;
-      console.log(this.automatic)
 
       if(this.automatic == null){ // Si es primera vez y no existe 
         this.storage.set('automatic', false); // Se genera false, osea desactivado 

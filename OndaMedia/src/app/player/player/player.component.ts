@@ -12,6 +12,8 @@ import { GeneralService } from '../../services/general.service';
 })
 export class PlayerComponent implements OnInit {
 
+  public page = "init";
+
   public  audio = new Audio();
   public  playpauseBoolean : boolean = false; // Funtion: false=pase audio, true=play audio;
   public  muteunmuteBoolean : boolean = false; // Funtion: false=off audio, true=on audio;
@@ -51,23 +53,48 @@ export class PlayerComponent implements OnInit {
     
    }
 
-   ngAfterViewInit(){
-     
-    if(this.arrow == false){
-      $('.chat-body').slideToggle();
-    }
-    
-   }
+
+   
 
   ngOnInit( ) {
 
+    this.automaticPlay();
+    this.initExpandBox();
+  }
 
-    this.genServ.getAutomaticValue(); // Al entrar a page, se verifica la configuracion realizada por el User
-    let hideFooterTimeout = setTimeout( () => {  // Use await/async
-      if(this.genServ.automatic == true){ //True
-        //document.getElementById("playBtn").click();
-        this.play(); // Reproduce automaticamente el directo de audio
-        //this.playpauseBoolean= true; //Se habilita Spinner
+  initExpandBox(){
+
+    if(this.page == "home"){
+
+      this.arrow = false;
+      $('.chat-body').slideUp("fast");
+    
+    }else{
+
+        if(this.arrow == true){
+
+          this.arrow = false;
+          $('.chat-body').slideUp("fast");
+
+        }else{
+
+          this.arrow = false;
+          $('.chat-body').slideUp("fast");
+        }
+      }
+  }
+
+  
+  automaticPlay(){
+
+    this.genServ.getAutomaticValue(); 
+
+    let hideFooterTimeout = setTimeout( () => {  
+
+      if(this.genServ.automatic == true){  
+
+        this.play(); 
+
       }
     }, 800);
  

@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
+import { PlayerComponent } from '../player/player/player.component';
 
 
 @Component({
@@ -9,11 +10,13 @@ import { Router } from '@angular/router';
 })
 export class NewsPage implements OnInit {
 
+  @ViewChild(PlayerComponent) Audio: PlayerComponent;
+
 
   constructor(private router: Router) { }
 
   ngOnInit() {
-
+    this.Audio.page = "other";
   }
 
 
