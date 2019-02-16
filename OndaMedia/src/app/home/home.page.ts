@@ -9,12 +9,14 @@ import { Router } from '@angular/router';
 })
 export class HomePage implements OnInit {
 
-
   @ViewChild(PlayerComponent) Audio: PlayerComponent;
+
+  public playpause: boolean = false;
 
   constructor (private router: Router) {}
 
   ngOnInit() {
+    //this.playpause = this.Audio.playpauseBoolean;
     this.Audio.page = "home";
   }
 

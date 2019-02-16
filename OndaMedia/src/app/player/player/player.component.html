@@ -1,21 +1,37 @@
 <ion-toolbar class="chat-box" color="dark">
 
-    <ion-grid padding class="chat-head">
 
+    <di class="chat-head">
 
-        <ion-row>
-            <ion-col size-sm (click)="this.expandBox()">
-                <ion-icon style="zoom:2.0;" [name]="this.arrow ? 'arrow-dropdown' : 'arrow-dropup'" color="purpure"></ion-icon>
-            </ion-col>
-            <ion-col size-sm (click)="mute()">
-                <ion-icon [name]="this.muteunmuteBoolean ? 'volume-high' : 'volume-off'" color="warning"></ion-icon>
-            </ion-col>
-            <ion-col size-sm (click)="playpause()">
-                <ion-icon [name]="this.playpauseBoolean? 'pause' : 'play'" color="warning"></ion-icon>
-            </ion-col>
-        </ion-row>
+        <ion-grid class="chat-head">
 
-    </ion-grid>
+            <ion-row>
+                <ion-col size-sm (click)="this.expandBox()">
+                    <ion-icon style="zoom:2.0;" [name]="this.arrow ? 'arrow-dropdown' : 'arrow-dropup'" color="purpure"></ion-icon>
+                </ion-col>
+                <ion-col size="6">
+
+                    <ion-grid>
+                        <ion-row>
+                            <label>La lista</label>
+                        </ion-row>
+                        <ion-row>
+                            <small>de 17 h a 20 h</small>
+                        </ion-row>
+                    </ion-grid>
+
+                </ion-col>
+                <ion-col size-sm (click)="mute()">
+                    <ion-icon style="zoom:1.5;" [name]="this.muteunmuteBoolean ? 'volume-off' : 'volume-high'" color="play"></ion-icon>
+                </ion-col>
+                <ion-col size-sm (click)="playpause()">
+                    <ion-icon style="zoom:1.5;" [name]="this.playpauseBoolean? 'pause' : 'play'" color="play"></ion-icon>
+                </ion-col>
+            </ion-row>
+
+        </ion-grid>
+
+    </di>
 
 
     <div class="chat-body">

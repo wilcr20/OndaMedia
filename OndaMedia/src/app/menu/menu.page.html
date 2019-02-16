@@ -7,7 +7,7 @@
 
             <br><br>
 
-            <ion-item *ngFor="let page of this.pages" [routerLink]="page.url" routerDirection="root" color="dark" no-line>
+            <ion-item lines="none" *ngFor="let page of this.pages" [routerLink]="page.url" routerDirection="root" color="dark" no-line>
 
                 <ion-icon name="{{page.icon}}" slot="start" color="{{page.color}}"></ion-icon>
                 <ion-label>
@@ -25,15 +25,15 @@
 
                     &nbsp;
 
-                    <ion-icon href="https://www.facebook.com/ondamedia.es" slot="icon-only" color="facebook" style="zoom:2.5;" name="logo-facebook"></ion-icon>
+                    <ion-icon (click)="this.openLink('Facebook')" slot="icon-only" color="facebook" style="zoom:2.5;" name="logo-facebook"></ion-icon>
 
                     &nbsp;
 
-                    <ion-icon href="https://twitter.com/Onda_Media" slot="icon-only" color="twitter" style="zoom:2.5;" name="logo-twitter"></ion-icon>
+                    <ion-icon (click)="this.openLink('Twitter')" slot="icon-only" color="twitter" style="zoom:2.5;" name="logo-twitter"></ion-icon>
 
                     &nbsp;
 
-                    <ion-icon href="https://www.instagram.com/ondamedia.es/" slot="icon-only" color="instagram" style="zoom:2.5;" name="logo-instagram"></ion-icon>
+                    <ion-icon (click)="this.openLink('Instagram')" slot="icon-only" color="instagram" style="zoom:2.5;" name="logo-instagram"></ion-icon>
 
                     &nbsp;
 

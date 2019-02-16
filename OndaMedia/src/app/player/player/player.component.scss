@@ -4,15 +4,16 @@
     position: sticky;
     right: 0px;
     bottom: 0px;
-    background: #b3ffec;
+    background: #222428;
     width: 100%;
     border-radius: 5px 5px 0px 0px;
 }
 
 .chat-head {
     width: inherit;
-    height: 50px;
+    height: 55px;
     background: #000000;
+    overflow: auto;
 }
 
 .chat-body {

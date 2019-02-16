@@ -14,6 +14,7 @@ import { StreamingMedia } from '@ionic-native/streaming-media/ngx';
 import { IonicStorageModule } from '@ionic/storage';
 import { ComponentsModule } from './player/components.module';
 import { PlayerComponent } from './player/player/player.component';
+import { NativeAudio } from '@ionic-native/native-audio/ngx';
 
 
 @NgModule({
@@ -35,7 +36,7 @@ import { PlayerComponent } from './player/player/player.component';
     StatusBar,
     SplashScreen,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
-    StreamingMedia,
+    StreamingMedia,NativeAudio
 
   ],
   bootstrap: [AppComponent]

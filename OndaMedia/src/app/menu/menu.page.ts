@@ -59,6 +59,30 @@ export class MenuPage implements OnInit {
   ngOnInit() {
   }
 
+  openLink(link) {  
+
+    try {
+
+      switch(link) {
+        case "Twitter":
+            window.open("https://twitter.com/Onda_Media",'_system', 'location=yes');
+            break;
+        case "Facebook":
+            window.open("https://www.facebook.com/ondamedia.es",'_system', 'location=yes');
+            break;
+        case "Instagram":
+            window.open("https://www.instagram.com/ondamedia.es/",'_system', 'location=yes');
+            break;
+        case "Google":
+            window.open("",'_system', 'location=yes');
+            break;
+        default:
+      }
+
+    } catch (error) {
+      console.log(error);
+    }
   
+  }
 
 }

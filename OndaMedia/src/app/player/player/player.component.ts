@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { MenuController } from '@ionic/angular';
-import { StreamingMedia, StreamingVideoOptions, StreamingAudioOptions } from '@ionic-native/streaming-media/ngx';
+import { StreamingMedia } from '@ionic-native/streaming-media/ngx';
 import * as $ from 'jquery'
 import { GeneralService } from '../../services/general.service';
-
+import { NativeAudio } from '@ionic-native/native-audio/ngx';
 
 @Component({
   selector: 'app-player',
@@ -14,25 +14,11 @@ export class PlayerComponent implements OnInit {
 
   public page = "init";
 
-  public  audio = new Audio();
   public  playpauseBoolean : boolean = false; // Funtion: false=pase audio, true=play audio;
   public  muteunmuteBoolean : boolean = false; // Funtion: false=off audio, true=on audio;
 
-  private videoUrl = 'http://37.187.7.106/ondamusical/live.m3u8';
-  private audioUrl = 'http://streaming1.ondamusicalradio.com:8100/onradio.mp3';
+  public audioUrl: string = 'http://streaming1.ondamusicalradio.com:8100/onradio.mp3';
 
-  private videoOptions: StreamingVideoOptions = {
-    successCallback: () => { console.log('Video played') },
-    errorCallback: (e) => { console.log('Error streaming') },
-    orientation: 'landscape',
-    shouldAutoClose: true,
-    controls: false
-  };
-
-  private audioOptions: StreamingAudioOptions = {
-    successCallback: () => { console.log('Audio played') },
-    errorCallback: (e) => { console.log('Error streaming') }
-  };
 
   public contact = [{url:'https://www.ondamedia.es/wp-content/uploads/2019/01/alberto-herreros2.png'},
                      {url:'https://www.ondamedia.es/wp-content/uploads/2019/01/serezade-segui.png'},
@@ -45,11 +31,11 @@ export class PlayerComponent implements OnInit {
   constructor(
     public menuCtrl: MenuController,
     public streamingMedia: StreamingMedia,
-    private genServ: GeneralService) {
+    public genServ: GeneralService,
+    public  nativeAudio: NativeAudio) {
 
     this.menuCtrl.enable(true);
     this.contact.reverse();
-    this.audio.src = "http://streaming1.ondamusicalradio.com:8100/onradio.mp3";
     
    }
 
@@ -57,6 +43,8 @@ export class PlayerComponent implements OnInit {
    
 
   ngOnInit( ) {
+
+    this.nativeAudio.preloadSimple('uniqueId1', 'http://streaming1.ondamusicalradio.com:8100/onradio.mp3');
 
     this.automaticPlay();
     this.initExpandBox();
@@ -100,13 +88,6 @@ export class PlayerComponent implements OnInit {
  
   }
 
-  playStreamingVideo(){
-    this.streamingMedia.playVideo(this.videoUrl, this.videoOptions);
-  }
-
-  playStreamingAudio(){
-    this.streamingMedia.playAudio(this.audioUrl, this.audioOptions);
-  }
 
   expandBox(){
 
@@ -117,27 +98,28 @@ export class PlayerComponent implements OnInit {
   /********* START:  AUDIO FUNTIONS ***********/
 
   play(){
-    this.audio.play();
-    this.playpauseBoolean= true; //Se habilita Spinner
+    this.nativeAudio.play('uniqueId1');
+    this.playpauseBoolean= true;
   }
 
   playpause(){
 
       if ( this.playpauseBoolean == true) {
-        
-        this.audio.pause();
+
+        this.nativeAudio.stop('uniqueId1');
         this.playpauseBoolean = false;
      
       } else {
 
-        this.audio.play();
+        this.nativeAudio.play('uniqueId1');
         this.playpauseBoolean = true;
       }
   }
-
-    
+  
   mute(){
 
+    this.nativeAudio.setVolumeForComplexAsset('uniqueId1', 0.6);
+    /*
       if(this.audio.volume != 0) {
 
         this.audio.volume = 0;
@@ -149,11 +131,10 @@ export class PlayerComponent implements OnInit {
         this.muteunmuteBoolean = true;
     
       }
+      */
 
   }
 
-  
-  
   /********* END:  AUDIO  FUNTIONS ***********/
 
 }
