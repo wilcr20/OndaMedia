@@ -16,7 +16,6 @@ export class HomePage implements OnInit {
   constructor (private router: Router) {}
 
   ngOnInit() {
-    //this.playpause = this.Audio.playpauseBoolean;
     this.Audio.page = "home";
   }
 
