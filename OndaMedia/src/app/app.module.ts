@@ -16,9 +16,13 @@ import { ComponentsModule } from './player/components.module';
 import { PlayerComponent } from './player/player/player.component';
 import { NativeAudio } from '@ionic-native/native-audio/ngx';
 
+//import { BackgroundMode } from '@ionic-native/background-mode';
+
+import { BackgroundMode } from '@ionic-native/background-mode/ngx';
+
 
 @NgModule({
-
+ 
   
   declarations: [AppComponent],
 
@@ -33,9 +37,11 @@ import { NativeAudio } from '@ionic-native/native-audio/ngx';
 
   providers: [
     PlayerComponent,
+    BackgroundMode,
     StatusBar,
     SplashScreen,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
+    
     StreamingMedia,NativeAudio
 
   ],

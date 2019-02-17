@@ -4,6 +4,7 @@ import { StreamingMedia } from '@ionic-native/streaming-media/ngx';
 import * as $ from 'jquery'
 import { GeneralService } from '../../services/general.service';
 import { NativeAudio } from '@ionic-native/native-audio/ngx';
+import { BackgroundMode } from '@ionic-native/background-mode/ngx';
 
 @Component({
   selector: 'app-player',
@@ -32,7 +33,8 @@ export class PlayerComponent implements OnInit {
     public menuCtrl: MenuController,
     public streamingMedia: StreamingMedia,
     public genServ: GeneralService,
-    public  nativeAudio: NativeAudio) {
+    public  nativeAudio: NativeAudio,
+     public backgroundMode : BackgroundMode) {
 
     this.menuCtrl.enable(true);
     this.contact.reverse();
@@ -98,8 +100,17 @@ export class PlayerComponent implements OnInit {
   /********* START:  AUDIO FUNTIONS ***********/
 
   play(){
-    this.nativeAudio.play('uniqueId1');
-    this.playpauseBoolean= true;
+
+    // this.nativeAudio.play('uniqueId1');
+    // this.playpauseBoolean= true;
+
+    this.backgroundMode.enable(); // Activa segundo plano
+    this.backgroundMode.on("activate").subscribe(()=>{
+      this.nativeAudio.play('uniqueId1');
+      this.playpauseBoolean= true; 
+    });
+    //this.nativeAudio.play("audio1"),() => console.log('audio1 is done playing'));
+
   }
 
   playpause(){
