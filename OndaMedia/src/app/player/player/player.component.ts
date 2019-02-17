@@ -111,6 +111,9 @@ export class PlayerComponent implements OnInit {
     });
     //this.nativeAudio.play("audio1"),() => console.log('audio1 is done playing'));
 
+    //https://www.techiediaries.com/ionic-background-mode/
+    //https://www.freakyjolly.com/ionic-4-keep-it-running-in-background-using-cordova-and-ionic-native-plugins/#more-1506
+
   }
 
   playpause(){
