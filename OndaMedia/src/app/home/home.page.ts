@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { PlayerComponent } from '../player/player/player.component';
 import { Router } from '@angular/router';
+import { RadioService } from '../services/radio.service';
 
 @Component({
   selector: 'app-home',
@@ -11,14 +12,12 @@ export class HomePage implements OnInit {
 
   @ViewChild(PlayerComponent) Audio: PlayerComponent;
 
-  public playpause: boolean = false;
 
-  constructor (private router: Router) {}
+  constructor (private router: Router, public radioService: RadioService) {}
 
   ngOnInit() {
     this.Audio.page = "home";
   }
-
 
   openPage(page) {  
 

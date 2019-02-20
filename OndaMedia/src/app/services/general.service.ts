@@ -6,11 +6,13 @@ import { Storage } from '@ionic/storage';
 })
 export class GeneralService {
 
+  public automatic:boolean; // Flag Reproduccion automatica
+
+  
   constructor(  private storage: Storage) {
     this.getAutomaticValue();
    }
 
-  public automatic:boolean; // Flag Reproduccion automatica
 
    getAutomaticValue(){
     this.storage.get('automatic').then((val) => {
@@ -28,6 +30,8 @@ export class GeneralService {
     this.automatic = newAuto;
     this.storage.set('automatic', newAuto);    
   }
+
+
 
 }
  

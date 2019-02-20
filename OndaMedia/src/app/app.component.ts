@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { HomePage } from '../app/home/home.page';
 import { Platform } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
