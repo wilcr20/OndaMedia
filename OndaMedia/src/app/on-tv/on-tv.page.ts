@@ -13,7 +13,7 @@ export class OnTvPage implements OnInit {
 
   constructor( private streamingMedia: StreamingMedia) { 
     
-  }
+  }  
 
   ngOnInit() {
     this.playVideo();
@@ -24,7 +24,8 @@ export class OnTvPage implements OnInit {
     let options: StreamingVideoOptions = {
          successCallback: () => { console.log('Video played') },
          errorCallback: (e) => { console.log('Error streaming') },
-         orientation: 'portrait'
+        // orientation: 'portrait' // Orientacion modo vertical
+         orientation: 'landscape' // Orientacion modo horizontal
         }
         this.streamingMedia.playVideo('http://37.187.7.106/ondamusical/live.m3u8', options);
 
