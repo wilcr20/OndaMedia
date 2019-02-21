@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Media, MediaObject } from '@ionic-native/media/ngx';
 import { ToastController } from '@ionic/angular';
+import { BackgroundMode } from '@ionic-native/background-mode/ngx';
 
 @Injectable({
   providedIn: 'root'
@@ -11,19 +12,23 @@ export class RadioService {
   public  audioUrl: string  ='http://streaming1.ondamusicalradio.com:8100/onradio.mp3';
   public  playpauseBoolean  : boolean = false;
 
-  constructor(public media: Media, public toastController: ToastController) { 
+  constructor(
+    public media: Media,
+    public toastController: ToastController, 
+    public backgroundMode: BackgroundMode) { 
 
     this.inicializeAudio();
   }
 
-
-  
   public inicializeAudio(){
 
     if(this.playpauseBoolean == false){
 
       try {
-
+        
+        this.backgroundMode.setDefaults({title: "Onda Radio",ticker: "",text: "En directo"});
+        this.backgroundMode.enable();
+        
         this.radio = this.media.create(this.audioUrl);
         
       } catch (error) { this.presentToast("error de inicialización"); }
@@ -36,12 +41,14 @@ export class RadioService {
 
     try {
 
-      //this.backgroundMode.on("activate").subscribe(()=>{
+      this.backgroundMode.enable();
+
+      this.backgroundMode.on("activate").subscribe(()=>{
 
         this.radio.play();
         this.playpauseBoolean = true;
 
-      //});
+      });
       
     } catch (error) { this.presentToast(error); }
 
@@ -62,8 +69,12 @@ export class RadioService {
 
       try {
 
+        this.backgroundMode.on("activate").subscribe(()=>{
+          this.radio.pause();
+        });
         this.radio.pause();
         this.playpauseBoolean = false;
+
         
       } catch (error) { this.presentToast("pause error"); }
 
@@ -72,8 +83,11 @@ export class RadioService {
 
       try {
 
+        this.backgroundMode.on("activate").subscribe(()=>{
           this.radio.play();
-          this.playpauseBoolean = true;
+        });
+        this.radio.play();
+        this.playpauseBoolean = true;
         
       } catch (error) { this.presentToast("play error"); }
 
@@ -81,4 +95,5 @@ export class RadioService {
     }
   }
 
+ 
 }
