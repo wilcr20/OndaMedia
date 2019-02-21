@@ -1,5 +1,5 @@
 <ion-app>
-    <ion-menu contentId="menu" side="start" type="reveal" auto-hide="true">
+    <ion-menu contentId="menu" id="menuC" side="start" type="reveal"  auto-hide="true">
 
         <ion-header></ion-header>
 
@@ -7,7 +7,7 @@
 
             <br><br>
 
-            <ion-item lines="none" *ngFor="let page of this.pages" [routerLink]="page.url" routerDirection="root" color="dark" no-line>
+            <ion-item  lines="none" *ngFor="let page of this.pages" (click)="closeMenu()"  [routerLink]="page.url" routerDirection="root" color="dark" no-line>
 
                 <ion-icon name="{{page.icon}}" slot="start" color="{{page.color}}"></ion-icon>
                 <ion-label>
@@ -15,7 +15,7 @@
                 </ion-label>
 
             </ion-item>
-
+ 
         </ion-content>
 
         <ion-footer>

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Router, RouterEvent} from '@angular/router'
+import { MenuController } from '@ionic/angular';
 
 
 @Component({
@@ -32,7 +33,7 @@ export class MenuPage implements OnInit {
     title: "Actualidad",
     url:"/menu/news",
     icon:'paper',
-    color:"danger"
+    color:"danger" 
   },
   {
     title: "On Tv",
@@ -50,13 +51,18 @@ export class MenuPage implements OnInit {
 
   selectedPath = ''; // Verifica el path seleccionado
 
-  constructor( private router:Router) {
+  constructor( private router:Router,
+    private menu: MenuController) {
     this.router.events.subscribe( (event:RouterEvent) =>{
         this.selectedPath=event.url; // Realiza rl moviemiento de Page dinamico
     });
    }
 
   ngOnInit() {
+  }
+
+  closeMenu(){
+    this.menu.close();
   }
 
   openLink(link) {  
