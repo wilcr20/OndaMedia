@@ -3,6 +3,7 @@ import { PlayerComponent } from '../player/player/player.component';
 import { Router } from '@angular/router';
 import { RadioService } from '../services/radio.service';
 
+
 @Component({
   selector: 'app-home',
   templateUrl: './home.page.html',
@@ -13,7 +14,8 @@ export class HomePage implements OnInit {
   @ViewChild(PlayerComponent) Audio: PlayerComponent;
 
 
-  constructor (private router: Router, public radioService: RadioService) {}
+  constructor (public router: Router, 
+               public radioService: RadioService) {}
 
   ngOnInit() {
     this.Audio.page = "home";
@@ -36,4 +38,5 @@ export class HomePage implements OnInit {
   
   }
  
+
 }

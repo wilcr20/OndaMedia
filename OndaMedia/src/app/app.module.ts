@@ -18,11 +18,12 @@ import { NativeAudio } from '@ionic-native/native-audio/ngx';
 import { BackgroundMode } from '@ionic-native/background-mode/ngx';
 import { AndroidExoplayer } from '@ionic-native/android-exoplayer/ngx';
 import { Media } from '@ionic-native/media/ngx';
-//import { MusicControls } from '@ionic-native/music-controls/ngx';
+
+import { MusicControls } from '@ionic-native/music-controls/ngx';
+
 
 @NgModule({
  
-  
   declarations: [AppComponent],
 
   entryComponents: [],
@@ -41,7 +42,7 @@ import { Media } from '@ionic-native/media/ngx';
     SplashScreen,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     
-    StreamingMedia,NativeAudio,AndroidExoplayer,Media 
+    StreamingMedia,NativeAudio,AndroidExoplayer,Media,MusicControls 
 
   ],
   bootstrap: [AppComponent]
