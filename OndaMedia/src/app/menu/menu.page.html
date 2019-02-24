@@ -1,21 +1,26 @@
 <ion-app>
-    <ion-menu contentId="menu" id="menuC" side="start" type="reveal"  auto-hide="true">
+    <ion-menu contentId="menu" id="menuC" side="start" type="reveal"
+        auto-hide="true">
 
         <ion-header></ion-header>
 
-        <ion-content color="dark">
+        <ion-content>
 
             <br><br>
 
-            <ion-item  lines="none" *ngFor="let page of this.pages" (click)="closeMenu()"  [routerLink]="page.url" routerDirection="root" color="dark" no-line>
+            <!-- <ion-item  lines="none" *ngFor="let page of this.pages" (click)="closeMenu()"  [routerLink]="page.url" routerDirection="root"  no-line> -->
+            <ion-item lines="full" *ngFor="let page of this.pages"
+                (click)="closeMenu()" [routerLink]="page.url"
+                routerDirection="root" >
 
-                <ion-icon name="{{page.icon}}" slot="start" color="{{page.color}}"></ion-icon>
+                <ion-icon name="{{page.icon}}" slot="start"
+                    color="{{page.color}}"></ion-icon>
                 <ion-label>
-                    {{page.title}}
+                    <strong style="color:cornflowerblue"> {{page.title}}</strong>
                 </ion-label>
 
             </ion-item>
- 
+
         </ion-content>
 
         <ion-footer>
@@ -25,19 +30,26 @@
 
                     &nbsp;
 
-                    <ion-icon (click)="this.openLink('Facebook')" slot="icon-only" color="facebook" style="zoom:2.5;" name="logo-facebook"></ion-icon>
+                    <ion-icon (click)="this.openLink('Facebook')"
+                        slot="icon-only" color="facebook" style="zoom:2.5;"
+                        name="logo-facebook"></ion-icon>
 
                     &nbsp;
 
-                    <ion-icon (click)="this.openLink('Twitter')" slot="icon-only" color="twitter" style="zoom:2.5;" name="logo-twitter"></ion-icon>
+                    <ion-icon (click)="this.openLink('Twitter')"
+                        slot="icon-only" color="twitter" style="zoom:2.5;"
+                        name="logo-twitter"></ion-icon>
 
                     &nbsp;
 
-                    <ion-icon (click)="this.openLink('Instagram')" slot="icon-only" color="instagram" style="zoom:2.5;" name="logo-instagram"></ion-icon>
+                    <ion-icon (click)="this.openLink('Instagram')"
+                        slot="icon-only" color="instagram" style="zoom:2.5;"
+                        name="logo-instagram"></ion-icon>
 
                     &nbsp;
 
-                    <ion-icon slot="icon-only" color="google" style="zoom:2.5;" name="logo-google"></ion-icon>
+                    <ion-icon slot="icon-only" color="google" style="zoom:2.5;"
+                        name="logo-google"></ion-icon>
 
 
                 </ul>
