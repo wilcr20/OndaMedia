@@ -24,7 +24,7 @@ export class MenuPage implements OnInit {
     color:"yellow"
   },
   {
-    title: "Programas y podcats",
+    title: "Programas y podcasts",
     url:"/menu/radio-channels",
     icon:'microphone',
     color:"blue"

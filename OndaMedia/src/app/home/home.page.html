@@ -20,19 +20,19 @@
 
         <br> <br> <br> <br> <br> <br> <br>
 
-        <ion-button size="small" shape="round" color="dark" (click)="this.radioService.playpause()" *ngIf="this.radioService.playpauseBoolean == false">
+        <ion-button padding size="small" fill="solid" shape="round" color="dark" (click)="this.radioService.playpause()" *ngIf="this.radioService.playpauseBoolean == false">
             <ion-icon slot="icon-only" name="play" color="success"></ion-icon>
             EN DIRECTO
         </ion-button>
 
-        <ion-button size="small" shape="round" color="dark" *ngIf="this.radioService.playpauseBoolean == true">
+        <ion-button padding strong="false" size="small" shape="round" color="dark" *ngIf="this.radioService.playpauseBoolean == true">
             <ion-avatar slot="start">
                 <img src="https://loading.io/spinners/equalizer/lg.equalizer-bars-loader.gif">
             </ion-avatar>
             <ion-label slot="end"> &nbsp;&nbsp;&nbsp;EN DIRECTO</ion-label>
         </ion-button>
 
-        <br> <br> <br> <br> <br> <br> <br> <br> <br> <br>
+        <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br>
     </div>
 
 
