@@ -3,50 +3,8 @@
 @import '~@ionic/angular/css/normalize.css';
 @import '~@ionic/angular/css/structure.css';
 @import '~@ionic/angular/css/typography.css';
-
 @import '~@ionic/angular/css/padding.css';
 @import '~@ionic/angular/css/float-elements.css';
 @import '~@ionic/angular/css/text-alignment.css';
 @import '~@ionic/angular/css/text-transformation.css';
 @import '~@ionic/angular/css/flex-utils.css';
-
-
-
-/** EXPAND BOX***/
-
-.chat-box {
-    position: sticky;
-    right: 0px;
-    bottom: 0px;
-    background: #b3ffec;
-    width: 100%;
-    border-radius: 5px 5px 0px 0px;
-}
-
-.chat-head {
-    width: inherit;
-    height: 50px;
-    background: #000000;
-}
-
-.chat-head h2 {
-    color: white;
-    padding: 4px;
-    display: inline-block;
-}
-
-.chat-head img {
-    cursor: pointer;
-    padding: 4px;
-    float: left;
-    width: 30px;
-    margin: 25px;
-}
-
-.chat-body {
-    height: 400px;
-    width: inherit;
-    overflow: auto;
-    margin-bottom: 50px;
-}
-

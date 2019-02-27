@@ -1,5 +1,5 @@
 <ion-app>
-    <ion-menu contentId="menu" id="menuC" side="start" type="overlay" auto-hide="true" swipe-gesture="true">
+    <ion-menu style="width: 80%" contentId="menu" id="menuC" side="start" type="overlay" auto-hide="true" swipe-gesture="true">
 
         <ion-content>
 
@@ -19,30 +19,29 @@
 
         <ion-footer no-border>
 
-            <ion-toolbar>
 
-                <ul>
+            <ul>
 
-                    &nbsp;
+                &nbsp;
 
-                    <ion-icon (click)="this.openLink('Facebook')" slot="icon-only" color="facebook" style="zoom:2.5;" name="logo-facebook"></ion-icon>
+                <ion-icon (click)="this.openLink('Facebook')" slot="icon-only" color="facebook" style="zoom:2.5;" name="logo-facebook"></ion-icon>
 
-                    &nbsp;
+                &nbsp;
 
-                    <ion-icon (click)="this.openLink('Twitter')" slot="icon-only" color="twitter" style="zoom:2.5;" name="logo-twitter"></ion-icon>
+                <ion-icon (click)="this.openLink('Twitter')" slot="icon-only" color="twitter" style="zoom:2.5;" name="logo-twitter"></ion-icon>
 
-                    &nbsp;
-
-                    <ion-icon (click)="this.openLink('Instagram')" slot="icon-only" color="instagram" style="zoom:2.5;" name="logo-instagram"></ion-icon>
-
-                    &nbsp;
-
-                    <ion-icon slot="icon-only" color="google" style="zoom:2.5;" name="logo-google"></ion-icon>
+                &nbsp;
 
 
-                </ul>
+                <ion-icon (click)="this.openLink('Instagram')" slot="icon-only" color="instagram" style="zoom:2.5;" name="logo-instagram"></ion-icon>
 
-            </ion-toolbar>
+                &nbsp;
+
+                <ion-icon slot="icon-only" color="google" style="zoom:2.5;" name="logo-google"></ion-icon>
+
+
+            </ul>
+
         </ion-footer>
 
     </ion-menu>
