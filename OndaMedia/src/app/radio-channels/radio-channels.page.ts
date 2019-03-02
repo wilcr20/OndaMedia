@@ -13,9 +13,7 @@ export class RadioChannelsPage implements OnInit {
 
   public type:  string = "Programas";
 
-  public slideOpts = {
-    effect: 'flip'
-  };
+  public slideOpts = { effect: 'flip'};
   
   public contact = [ {url:'https://www.ondamedia.es/wp-content/uploads/2019/01/ONRADIO-9-880x529.png'},
                      {url:'https://www.ondamedia.es/wp-content/uploads/2019/01/codigofm-880x529.png'},

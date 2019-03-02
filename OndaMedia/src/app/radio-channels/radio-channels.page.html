@@ -10,8 +10,8 @@
 <ion-content>
 
 
-    <ion-slides padding pager="true" [options]="slideOpts">
-        <ion-slide *ngFor="let data of this.contact" (click)="this.openPage('channel');">
+    <ion-slides pager="true" [options]="slideOpts">
+        <ion-slide padding *ngFor="let data of this.contact" (click)="this.openPage('channel');">
             <img src="{{data.url}}">
         </ion-slide>
     </ion-slides>

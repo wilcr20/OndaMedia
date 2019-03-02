@@ -13,6 +13,7 @@ export class PlayerComponent implements OnInit {
 
   public arrow :boolean = false;
   public page  :string  = "init";
+  public slideOpts = { effect: 'flip' };
 
   public contact = [{url:'https://www.ondamedia.es/wp-content/uploads/2019/01/alberto-herreros2.png'},
                      {url:'https://www.ondamedia.es/wp-content/uploads/2019/01/serezade-segui.png'},

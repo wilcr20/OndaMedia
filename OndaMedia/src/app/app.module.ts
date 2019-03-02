@@ -21,6 +21,8 @@ import { Media } from '@ionic-native/media/ngx';
 
 import { MusicControls } from '@ionic-native/music-controls/ngx';
 
+import { CommonModule } from '@angular/common';
+
 
 @NgModule({
  
@@ -29,6 +31,7 @@ import { MusicControls } from '@ionic-native/music-controls/ngx';
   entryComponents: [],
 
   imports: [
+    CommonModule,
     ComponentsModule,
     BrowserModule,
     IonicModule.forRoot(),
