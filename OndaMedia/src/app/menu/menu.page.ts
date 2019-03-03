@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Router, RouterEvent} from '@angular/router'
 import { MenuController } from '@ionic/angular';
+import { StreamingMedia, StreamingVideoOptions } from '@ionic-native/streaming-media/ngx';
 
 
 @Component({
@@ -15,44 +16,52 @@ export class MenuPage implements OnInit {
     title: "En directo",
     url:"/menu/home",
     icon:"play",
-    color:"green"
+    color:"green",
+    keyword:"live"
   },
   {
     title: "La lista",
     url:"/menu/we-us",
     icon:'list',
-    color:"yellow"
+    color:"yellow",
+    keyword:"list"
   },
   {
     title: "Programas y podcasts",
     url:"/menu/radio-channels",
     icon:'microphone',
-    color:"blue"
+    color:"blue",
+    keyword:"radio"
   },
   {
     title: "Actualidad",
     url:"/menu/news",
     icon:'paper',
-    color:"danger" 
+    color:"danger",
+    keyword:"news" 
   },
   {
     title: "On Tv",
-    url:"/menu/on-tv",
+    //url:"/menu/on-tv",
+    url:"#", //Actual Page URL
     icon:'tv',
-    color:"secondary"
+    color:"secondary",
+    keyword:"video"
   }, 
   {
     title: "Configuración",
     url:"/menu/config",
     icon:'settings',
-    color:"success"
+    color:"success",
+    keyword:"sett"
   }
 ];
 
   selectedPath = ''; // Verifica el path seleccionado
 
   constructor( private router:Router,
-    private menu: MenuController) {
+    private menu: MenuController,
+    private streamingMedia: StreamingMedia) {
     this.router.events.subscribe( (event:RouterEvent) =>{
         this.selectedPath=event.url; // Realiza rl moviemiento de Page dinamico
     });
@@ -61,9 +70,25 @@ export class MenuPage implements OnInit {
   ngOnInit() {
   }
 
-  closeMenu(){
+  closeMenu(keyword){
+    
     this.menu.close();
+    if(keyword  == "video"){ // In the actual page 
+      this.playVideo();
+    }
   }
+
+  playVideo(){
+    console.log("playing video ...")
+    let options: StreamingVideoOptions = {
+         successCallback: () => { console.log('Video played') },
+         errorCallback: (e) => { console.log('Error streaming') },
+        // orientation: 'portrait' // Orientacion modo vertical
+         orientation: 'landscape' // Orientacion modo horizontal
+        }
+        this.streamingMedia.playVideo('http://37.187.7.106/ondamusical/live.m3u8', options);
+  }
+
 
   openLink(link) {  
 

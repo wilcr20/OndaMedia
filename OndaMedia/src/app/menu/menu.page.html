@@ -5,7 +5,7 @@
 
             <br><br>
 
-            <ion-item lines="none" *ngFor="let page of this.pages" (click)="closeMenu()" [routerLink]="page.url" routerDirection="root">
+            <ion-item lines="none" *ngFor="let page of this.pages" (click)="closeMenu(page.keyword)" [routerLink]="page.url" routerDirection="root">
 
                 <ion-icon name="{{page.icon}}" slot="start" color="dark"></ion-icon>
                 <ion-label>
@@ -18,7 +18,6 @@
         </ion-content>
 
         <ion-footer no-border>
-
 
             <ul>
 

@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { StreamingMedia, StreamingVideoOptions } from '@ionic-native/streaming-media/ngx';
 
-
+ 
 
 @Component({
   selector: 'app-on-tv',
