@@ -16,11 +16,12 @@
 
 <ion-content>
 
-     <ion-refresher (ionRefresh)="geneServ.doRefresh($event);">  <!--Refresh Section -->
-                <ion-refresher-content  pullingIcon="arrow-dropdown" pullingText="Deslize hacia abajo para refrescar" refreshingSpinner="circles" >
-                    <br>
-                    <br>
-                </ion-refresher-content>
+    <ion-refresher (ionRefresh)="geneServ.doRefresh($event);">
+        <!--Refresh Section -->
+        <ion-refresher-content pullingIcon="arrow-dropdown" pullingText="Deslize hacia abajo para refrescar" refreshingSpinner="circles">
+            <br>
+            <br>
+        </ion-refresher-content>
     </ion-refresher>
 
     <div class="backgroundImg">
@@ -28,7 +29,7 @@
         <br> <br> <br> <br> <br> <br> <br>
 
         <ion-button padding size="small" fill="solid" shape="round" color="dark" (click)="this.radioService.playpause()" *ngIf="this.radioService.playpauseBoolean == false">
-            <i style="zoom:1.2; color:#10dc60;" class="material-icons">play_circle_outline</i> &nbsp; EN DIRECTO
+            <i style="zoom:0.7; color:#10dc60;" class="material-icons">play_circle_outline</i> &nbsp; EN DIRECTO
         </ion-button>
 
         <ion-button padding strong="false" size="small" shape="round" color="dark" *ngIf="this.radioService.playpauseBoolean == true">

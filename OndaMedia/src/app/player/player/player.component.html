@@ -4,9 +4,7 @@
 
         <ion-row>
             <ion-col size-sm (click)="this.expandBox()">
-                <!--
-                <ion-icon style="zoom:2.0;" [name]="this.arrow ? 'arrow-dropdown' : 'arrow-dropup'" color="purpure"></ion-icon>
-                -->
+
                 <ion-icon style="zoom:2.0;" *ngIf="this.arrow == true" src="../../../assets/vsg/_ionicons_svg_ios-arrow-down.svg" color="purpure"></ion-icon>
                 <ion-icon style="zoom:2.0;" *ngIf="this.arrow == false" src="../../../assets/vsg/_ionicons_svg_ios-arrow-up.svg" color="purpure"></ion-icon>
 
@@ -29,9 +27,7 @@
 
                 <i style="zoom:1.5; color:#40e5e6;" *ngIf="this.RadioService.playpauseBoolean == true" class="material-icons">pause_circle_outline</i>
                 <i style="zoom:1.5; color:#40e5e6;" *ngIf="this.RadioService.playpauseBoolean == false" class="material-icons">play_circle_outline</i>
-                <!--
-                <ion-icon style="zoom:1.5;" [name]="this.RadioService.playpauseBoolean ? 'pause' : 'play'" color="play"></ion-icon>
-                -->
+
             </ion-col>
         </ion-row>
 

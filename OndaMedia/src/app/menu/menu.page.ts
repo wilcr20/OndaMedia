@@ -15,28 +15,28 @@ export class MenuPage implements OnInit {
   {
     title: "En directo",
     url:"/menu/home",
-    icon:"play",
+    icon:"play_circle_outline",
     color:"green",
     keyword:"live"
   },
   {
     title: "La lista",
     url:"/menu/we-us",
-    icon:'list',
+    icon:'format_list_bulleted',
     color:"yellow",
     keyword:"list"
   },
   {
     title: "Programas y podcasts",
     url:"/menu/radio-channels",
-    icon:'microphone',
+    icon:'mic_none',
     color:"blue",
     keyword:"radio"
   },
   {
     title: "Actualidad",
     url:"/menu/news",
-    icon:'paper',
+    icon:'library_books',
     color:"danger",
     keyword:"news" 
   },

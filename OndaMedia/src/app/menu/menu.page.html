@@ -1,16 +1,15 @@
 <ion-app>
-    <ion-menu style="width: 80%" contentId="menu" id="menuC" side="start" type="overlay" auto-hide="true" swipe-gesture="true">
+    <ion-menu contentId="menu" id="menuC" side="start" type="overlay" auto-hide="true" swipe-gesture="true">
 
         <ion-content>
 
-            <br><br>
+            <br>
 
             <ion-item lines="none" *ngFor="let page of this.pages" (click)="closeMenu(page.keyword)" [routerLink]="page.url" routerDirection="root">
 
-                <ion-icon name="{{page.icon}}" slot="start" color="dark"></ion-icon>
-                <ion-label>
-                    <strong style="color:rgb(19, 18, 18)"> {{page.title}}</strong>
-                </ion-label>
+                <i class="material-icons" style="zoom:1.2;" slot="start"> {{page.icon}} </i>
+
+                <ion-label>{{page.title}}</ion-label>
 
             </ion-item>
 
