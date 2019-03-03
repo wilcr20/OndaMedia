@@ -7,6 +7,7 @@ import { Storage } from '@ionic/storage';
 export class GeneralService {
 
   public automatic:boolean; // Flag Reproduccion automatica
+  public firstInit:number = 0;  // Flag para verificar si es la primera vez que usa la page Home
 
   
   constructor(  private storage: Storage) {
@@ -17,13 +18,13 @@ export class GeneralService {
    getAutomaticValue(){
     this.storage.get('automatic').then((val) => {
       this.automatic= val;
-
+      this.firstInit++;
       if(this.automatic == null){ // Si es primera vez y no existe 
         this.storage.set('automatic', false); // Se genera false, osea desactivado 
       }
-
     });
   }
+  
 
   setAutomaticValue(){
     let newAuto = !this.automatic;  // Se coloca el inverso al mover switch
@@ -38,7 +39,6 @@ export class GeneralService {
       event.target.complete();
     }, 400); //Time to call reload 0.4 sec
   }
-
 
 
 }

@@ -64,14 +64,13 @@ export class PlayerComponent implements OnInit {
 
     this.genServ.getAutomaticValue(); 
 
-    let hideFooterTimeout = setTimeout( () => {  
+     let hideFooterTimeout = setTimeout( () => {  
 
-      if(this.genServ.automatic == true){  
+       if(this.genServ.automatic == true && this.genServ.firstInit==2){   // " 2 == First time in Home page"
+         this.RadioService.play();
 
-        this.RadioService.play();
-
-      }
-    }, 800);
+       }
+     }, 800);
  
   }
 
