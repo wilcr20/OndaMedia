@@ -1,5 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { PlayerComponent } from '../player/player/player.component';
+import {GeneralService} from '../services/general.service';
+
 
 @Component({
   selector: 'app-note',
@@ -11,7 +13,7 @@ export class NotePage implements OnInit {
   @ViewChild(PlayerComponent) Audio: PlayerComponent;
 
 
-  constructor() { }
+  constructor( public geneServ:GeneralService) { }
 
   ngOnInit() {
 

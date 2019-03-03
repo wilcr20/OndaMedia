@@ -31,6 +31,14 @@ export class GeneralService {
     this.storage.set('automatic', newAuto);    
   }
 
+  doRefresh(event) {
+    setTimeout(() => {
+      console.log('Ready refresh');
+      location.reload();  //Refres page
+      event.target.complete();
+    }, 400); //Time to call reload 0.4 sec
+  }
+
 
 
 }

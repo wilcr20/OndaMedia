@@ -9,6 +9,12 @@
 
 <ion-content>
 
+        <ion-refresher (ionRefresh)="geneServ.doRefresh($event);">  <!--Refresh Section -->
+            <ion-refresher-content  pullingIcon="arrow-dropdown" pullingText="Deslize hacia abajo para refrescar" refreshingSpinner="circles" >
+                <br>
+            </ion-refresher-content>
+        </ion-refresher>
+
 
     <img src="https://www.ondamedia.es/wp-content/uploads/2019/01/ONRADIO-9-880x529.png">
 

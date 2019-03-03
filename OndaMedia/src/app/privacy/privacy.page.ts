@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { PlayerComponent } from '../player/player/player.component';
+import {GeneralService} from '../services/general.service';
 
 
 @Component({
@@ -12,7 +13,7 @@ export class PrivacyPage implements OnInit {
 
   @ViewChild(PlayerComponent) Audio: PlayerComponent;
 
-  constructor( private router: Router) { }
+  constructor( private router: Router, public geneServ:GeneralService) { }
 
   ngOnInit() {
     this.Audio.page = "other";

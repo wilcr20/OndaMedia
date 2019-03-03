@@ -16,6 +16,12 @@
 
 <ion-content>
 
+        <ion-refresher (ionRefresh)="geneServ.doRefresh($event);">  <!--Refresh Section -->
+            <ion-refresher-content  pullingIcon="arrow-dropdown" pullingText="Deslize hacia abajo para refrescar" refreshingSpinner="circles" >
+                <br>
+            </ion-refresher-content>
+        </ion-refresher>
+
 
     <ion-list>
         <!--Se hara uso de un ngFor, por lo que de acuerdo al index, se diferecniaran las canciones y el id HTML  -->

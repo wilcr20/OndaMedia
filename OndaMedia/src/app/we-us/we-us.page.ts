@@ -1,7 +1,8 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { PlayerComponent } from '../player/player/player.component';
+import {GeneralService} from '../services/general.service';
 
-@Component({
+@Component({ 
   selector: 'app-we-us',
   templateUrl: './we-us.page.html',
   styleUrls: ['./we-us.page.scss'],
@@ -10,7 +11,7 @@ export class WeUsPage implements OnInit {
 
   @ViewChild(PlayerComponent) Audio: PlayerComponent;
 
-  constructor() { }
+  constructor(public geneServ:GeneralService) { }
 
   ngOnInit() {
     this.Audio.page = "other";

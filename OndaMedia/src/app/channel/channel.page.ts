@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { PlayerComponent } from '../player/player/player.component';
+import {GeneralService} from '../services/general.service';
 
 @Component({
   selector: 'app-channel',
@@ -21,7 +22,7 @@ export class ChannelPage implements OnInit {
   {url:'https://www.ondamedia.es/wp-content/uploads/2014/11/ON-WORK-880x529.png'},
   {url:'https://www.ondamedia.es/wp-content/uploads/2014/11/ON-DANCE-880x529.png'}];
   
-  constructor() { }
+  constructor(  public geneServ:GeneralService) { }
 
   ngOnInit() {
     this.Audio.page = "other";
