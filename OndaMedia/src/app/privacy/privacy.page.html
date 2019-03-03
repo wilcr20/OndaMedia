@@ -12,8 +12,9 @@
     <ion-list style="margin-bottom:6%;">
         <ion-item class="lineColor" no-padding no-margin>
             <div (click)="openInfo(1)">
-
-                <ion-icon name="arrow-down" end></ion-icon>
+  
+                <ion-icon name="arrow-down" end *ngIf="!ve1"  > </ion-icon>
+                <ion-icon name="arrow-up" end *ngIf="ve1" > </ion-icon>
 
                 <strong>   INFORMACIÓN RELEVANTE</strong>
                 <div id="1" *ngIf="ve1">
@@ -42,7 +43,8 @@
         <ion-item class="lineColor" no-padding no-margin>
             <div (click)="openInfo(2)">
 
-                <ion-icon name="arrow-down" end></ion-icon>
+                <ion-icon name="arrow-down" end *ngIf="!ve2" ></ion-icon>
+                <ion-icon name="arrow-up" end *ngIf="ve2" > </ion-icon>
                 <strong>   LICENCIA</strong>
                 <div id="2" *ngIf="ve2">
                     <p class="textPrivacy">
@@ -55,7 +57,8 @@
         <ion-item class="lineColor" no-padding no-margin>
             <div (click)="openInfo(3)">
 
-                <ion-icon name="arrow-down" end></ion-icon>
+                    <ion-icon name="arrow-down" end *ngIf="!ve3" ></ion-icon>
+                    <ion-icon name="arrow-up" end *ngIf="ve3" > </ion-icon>
                 <strong>   USO NO AUTORIZADO</strong>
                 <div id="3" *ngIf="ve3">
                     <p class="textPrivacy">
@@ -69,7 +72,8 @@
         <ion-item class="lineColor" no-padding no-margin>
             <div (click)="openInfo(4)">
 
-                <ion-icon name="arrow-down" end></ion-icon>
+                    <ion-icon name="arrow-down" end *ngIf="!ve4" ></ion-icon>
+                    <ion-icon name="arrow-up" end *ngIf="ve4" > </ion-icon>
                 <strong>   PROPIEDAD</strong>
                 <div id="4" *ngIf="ve4">
                     <p class="textPrivacy">
@@ -82,7 +86,8 @@
         </ion-item>
         <ion-item class="lineColor" no-padding no-margin>
             <div (click)="openInfo(5)">
-                <ion-icon name="arrow-down" end></ion-icon>
+                    <ion-icon name="arrow-down" end *ngIf="!ve5" ></ion-icon>
+                    <ion-icon name="arrow-up" end *ngIf="ve5"> </ion-icon>
                 <strong>   POLÍTICA DE REEMBOLSO Y GARANTÍA</strong>
                 <div id="5" *ngIf="ve5">
                     <p class="textPrivacy">
@@ -102,7 +107,8 @@
         <ion-item class="lineColor" no-padding no-margin>
             <div (click)="openInfo(6)">
 
-                <ion-icon name="arrow-down" end></ion-icon>
+                <ion-icon name="arrow-down" end *ngIf="!ve6" ></ion-icon>
+                <ion-icon name="arrow-up" end *ngIf="ve6"> </ion-icon>
                 <strong>   COMPROBACIÓN ANTIFRAUDE</strong>
                 <div id="6" *ngIf="ve6">
                     <p class="textPrivacy">
@@ -114,7 +120,8 @@
         <ion-item class="lineColor" no-padding no-margin>
             <div (click)="openInfo(7)">
 
-                <ion-icon name="arrow-down" end></ion-icon>
+                    <ion-icon name="arrow-down" end *ngIf="!ve7" ></ion-icon>
+                    <ion-icon name="arrow-up" end *ngIf="ve7"> </ion-icon>
                 <strong>   PRIVACIDAD</strong>
                 <div id="7" *ngIf="ve7">
                     <p class="textPrivacy">

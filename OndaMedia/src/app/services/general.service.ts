@@ -34,7 +34,7 @@ export class GeneralService {
   doRefresh(event) {
     setTimeout(() => {
       console.log('Ready refresh');
-      location.reload();  //Refres page
+      location.reload();  //Refresh page
       event.target.complete();
     }, 400); //Time to call reload 0.4 sec
   }

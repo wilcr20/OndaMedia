@@ -23,7 +23,6 @@ export class NewsPage implements OnInit {
 
   openPage(page) {  
     try {
-
       switch(page) {
         case "note":
             this.router.navigate(['/menu/note']);
