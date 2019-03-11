@@ -1,14 +1,18 @@
 .lineColor {
-    border-bottom: 3px solid gray;
+    border-bottom: 2px solid white;
 }
 
-.exito{
+.exito {
     background-color: red;
 }
 
-.playButton{
+.playButton {
     margin-left: 20%;
     margin-top: 20%;
     width: 90px;
     height: 90px;
+}
+
+.effect .button-effect {
+    display: none !important;
 }

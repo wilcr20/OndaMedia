@@ -16,22 +16,24 @@
 
 <ion-content>
 
-        <ion-refresher (ionRefresh)="geneServ.doRefresh($event);">  <!--Refresh Section -->
-            <ion-refresher-content  pullingIcon="arrow-dropdown" pullingText="Deslize hacia abajo para refrescar" refreshingSpinner="circles" >
-                <br>
-            </ion-refresher-content>
-        </ion-refresher>
+    <ion-refresher (ionRefresh)="geneServ.doRefresh($event);">
+        <!--Refresh Section -->
+        <ion-refresher-content pullingIcon="arrow-dropdown" pullingText="Deslize hacia abajo para refrescar" refreshingSpinner="circles">
+            <br>
+        </ion-refresher-content>
+    </ion-refresher>
 
 
     <ion-list>
         <!--Se hara uso de un ngFor, por lo que de acuerdo al index, se diferecniaran las canciones y el id HTML  -->
-        <ion-item class="lineColor exito" no-padding no-margin color="purpure">
-            <div style=" width: 150px;height: 160px; background-image: url('https://d1csarkz8obe9u.cloudfront.net/posterpreviews/techno-club-music-album-cover-flyer-template-c05f6a0e3cf975dee969c05ed9c7b25f_screen.jpg?ts=1483748042');background-size: 100% 100%;">
+        <ion-item class="lineColor exito" no-padding no-margin color="dark">
+            <div style=" width: 150px;height: 160px; background-image: url('https://www.ondamedia.es/wp-content/uploads/2014/11/ON-WORK-880x529.png');background-size: 100% 100%;">
                 <img id="audio0" src="http://www.pngmart.com/files/3/Play-Button-PNG-Image.png" alt="" class="playButton" (click)="playMusic(0)">
             </div>
 
             <div style="float:right; margin-top:1%;margin-left:3%">
-                <h5 style="background-color:blue;color:white">Exito de la semana</h5>
+
+                <ion-button color="light">Exito de la semana</ion-button>
                 <h4 style="margin-top:1%;margin-bottom:2%"> Nombre de Cancion </h4>
                 <small> Nombre de banda/Cantante</small>
             </div>
@@ -39,33 +41,53 @@
 
 
         <ion-item class="lineColor" no-padding no-margin>
-            <div style=" width: 150px;height: 160px; background-image: url('https://d1csarkz8obe9u.cloudfront.net/posterpreviews/techno-club-music-album-cover-flyer-template-c05f6a0e3cf975dee969c05ed9c7b25f_screen.jpg?ts=1483748042');background-size: 100% 100%;">
+            <div style=" width: 150px;height: 160px; background-image: url('https://www.ondamedia.es/wp-content/uploads/2014/11/ON-HITS-880x529.png');background-size: 100% 100%;">
                 <img id="audio1" src="http://www.pngmart.com/files/3/Play-Button-PNG-Image.png" alt="" class="playButton" (click)="playMusic(1)">
             </div>
             <div style="margin-top:1%;margin-left:3%;">
                 <h3>1</h3>
-                <h4 style="margin-top:1%;margin-bottom:2%"> Nombre de Cancion </h4>
+                <h5 style="margin-top:1%;margin-bottom:2%"> 
+                    <i style="zoom:0.9; color:#989aa2;" class="material-icons">arrow_upward</i>
+                     Nombre de Cancion 
+                </h5>
                 <small> Nombre de banda/Cantante</small>
+                <br><br>
+                <i style="zoom:1.1; color:#989aa2;" class="material-icons" slot="end">thumb_up</i> &nbsp;
+                <i style="zoom:1.1; color:#989aa2;" class="material-icons" slot="end">thumb_down</i>
             </div>
         </ion-item>
+
         <ion-item class="lineColor" no-padding no-margin>
-            <div style=" width: 150px;height: 160px; background-image: url('https://d1csarkz8obe9u.cloudfront.net/posterpreviews/techno-club-music-album-cover-flyer-template-c05f6a0e3cf975dee969c05ed9c7b25f_screen.jpg?ts=1483748042');background-size: 100% 100%;">
+            <div style=" width: 150px;height: 160px; background-image: url('https://www.ondamedia.es/wp-content/uploads/2014/11/ON-DANCE-880x529.png');background-size: 100% 100%;">
                 <img id="audio2" src="http://www.pngmart.com/files/3/Play-Button-PNG-Image.png" alt="" class="playButton" (click)="playMusic(2)">
             </div>
-            <div style="margin-top:2%;margin-left:3%;">
-                <h3>2</h3>
-                <h4 style="margin-top:1%;margin-bottom:2%"> Nombre de Cancion </h4>
+            <div style="margin-top:1%;margin-left:3%;">
+                <h3>1</h3>
+                <h5 style="margin-top:1%;margin-bottom:2%"> 
+                    <i style="zoom:0.9; color:#989aa2;" class="material-icons">arrow_upward</i>
+                     Nombre de Cancion 
+                </h5>
                 <small> Nombre de banda/Cantante</small>
+                <br><br>
+                <i style="zoom:1.1; color:#989aa2;" class="material-icons" slot="end">thumb_up</i> &nbsp;
+                <i style="zoom:1.1; color:#989aa2;" class="material-icons" slot="end">thumb_down</i>
             </div>
         </ion-item>
+
         <ion-item class="lineColor" no-padding no-margin>
-            <div style=" width: 150px;height: 160px; background-image: url('https://d1csarkz8obe9u.cloudfront.net/posterpreviews/techno-club-music-album-cover-flyer-template-c05f6a0e3cf975dee969c05ed9c7b25f_screen.jpg?ts=1483748042');background-size: 100% 100%;">
+            <div style=" width: 150px;height: 160px; background-image: url('https://www.ondamedia.es/wp-content/uploads/2014/11/ON-HITS-880x529.png');background-size: 100% 100%;">
                 <img id="audio3" src="http://www.pngmart.com/files/3/Play-Button-PNG-Image.png" alt="" class="playButton" (click)="playMusic(3)">
             </div>
-            <div style="margin-top:2%;margin-left:3%;">
-                <h3>3</h3>
-                <h4 style="margin-top:1%;margin-bottom:2%"> Nombre de Cancion </h4>
+            <div style="margin-top:1%;margin-left:3%;">
+                <h3>1</h3>
+                <h5 style="margin-top:1%;margin-bottom:2%"> 
+                    <i style="zoom:0.9; color:#989aa2;" class="material-icons">arrow_upward</i>
+                     Nombre de Cancion 
+                </h5>
                 <small> Nombre de banda/Cantante</small>
+                <br><br>
+                <i style="zoom:1.1; color:#989aa2;" class="material-icons" slot="end">thumb_up</i> &nbsp;
+                <i style="zoom:1.1; color:#989aa2;" class="material-icons" slot="end">thumb_down</i>
             </div>
         </ion-item>
     </ion-list>
